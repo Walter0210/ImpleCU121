@@ -17,7 +17,7 @@ namespace CU121
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(); //Falta definir el form con el que tiene que arrancar.
         }
     }
 }
