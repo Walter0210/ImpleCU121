@@ -15,6 +15,6 @@ namespace CU121.FabricacionPura
         private string nombre;
         private float precio;
         private Producto producto;
-        private string responsableCreacion
+        private string responsableCreacion;
     }
 }
