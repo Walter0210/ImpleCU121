@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CU121.Dominio
 {
-    class Producto : InterfazEstructuraCarta
+    class Producto : IEstructuraCarta
     {
         private DateTime fechaCreacion;
         private int foto;

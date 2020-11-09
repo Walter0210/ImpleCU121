@@ -4,14 +4,14 @@ using System.Text;
 
 namespace CU121.Dominio
 {
-    interface InterfazEstructuraCarta
+    interface IEstructuraCarta
     {
-        void agregarHijo(InterfazEstructuraCarta interfazEstructuraCarta)
+        void agregarHijo(IEstructuraCarta interfazEstructuraCarta)
         {
 
         }
 
-        void eliminarHijo(InterfazEstructuraCarta interfazEstructuraCarta)
+        void eliminarHijo(IEstructuraCarta interfazEstructuraCarta)
         {
 
         }

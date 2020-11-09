@@ -19,5 +19,7 @@ namespace CU121
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(); //Falta definir el form con el que tiene que arrancar.
         }
+
+
     }
 }
