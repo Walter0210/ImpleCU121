@@ -13,7 +13,7 @@ namespace CU121.FabricacionPura
 
             foreach (EstructuraCarta carta in cartasTodas)
             {
-                if (desde <= carta.FechaFinVigencia && carta.FechaFinVigencia <= hasta)
+                if (carta.FechaFinVigencia != null)//cambio para probar desde <= carta.FechaFinVigencia && carta.FechaFinVigencia <= hasta
                 {
                     cartasVigentes.Add(carta);
                 }
