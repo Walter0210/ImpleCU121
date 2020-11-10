@@ -140,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 450);
+            this.ClientSize = new System.Drawing.Size(703, 450);
             this.Controls.Add(this.btnBuscarProductos);
             this.Controls.Add(this.btnBuscarSubCategorias);
             this.Controls.Add(this.dateTimePicker2);
