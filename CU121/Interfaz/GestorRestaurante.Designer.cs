@@ -36,7 +36,7 @@
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarSubCategorias = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btbBuscarCartas = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.grpCategorias = new System.Windows.Forms.GroupBox();
@@ -76,18 +76,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(100, 87);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(95, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 15);
+            this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fecha desde";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(103, 116);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(100, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 15);
+            this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Fecha hasta";
             // 
@@ -122,27 +124,26 @@
             this.btnBuscarSubCategorias.TabIndex = 5;
             this.btnBuscarSubCategorias.Text = "Mostrar SubCategorias";
             this.btnBuscarSubCategorias.UseVisualStyleBackColor = true;
-            this.btnBuscarSubCategorias.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // btbBuscarCartas
             // 
-            this.button1.Location = new System.Drawing.Point(474, 79);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 52);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Buscar cartas Vigentes";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btbBuscarCartas.Location = new System.Drawing.Point(474, 79);
+            this.btbBuscarCartas.Name = "btbBuscarCartas";
+            this.btbBuscarCartas.Size = new System.Drawing.Size(121, 52);
+            this.btbBuscarCartas.TabIndex = 5;
+            this.btbBuscarCartas.Text = "Buscar cartas Vigentes";
+            this.btbBuscarCartas.UseVisualStyleBackColor = true;
+            this.btbBuscarCartas.Click += new System.EventHandler(this.btbBuscarCartas_Click);
             // 
             // btnGenerar
             // 
+            this.btnGenerar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGenerar.Location = new System.Drawing.Point(12, 419);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(679, 65);
             this.btnGenerar.TabIndex = 5;
             this.btnGenerar.Text = "Generar Informe";
             this.btnGenerar.UseVisualStyleBackColor = true;
-            this.btnGenerar.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvCategorias
             // 
@@ -242,7 +243,7 @@
             this.Controls.Add(this.grpSubCategorias);
             this.Controls.Add(this.grpCategorias);
             this.Controls.Add(this.btnGenerar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btbBuscarCartas);
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.label3);
@@ -252,6 +253,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "GestorRestaurante";
             this.Text = "GestorRestaurante";
+            this.Load += new System.EventHandler(this.GestorRestaurante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.grpCategorias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubCategorias)).EndInit();
@@ -273,7 +275,7 @@
         private System.Windows.Forms.DateTimePicker dtpFechaDesde;
         private System.Windows.Forms.DateTimePicker dtpFechaHasta;
         private System.Windows.Forms.Button btnBuscarSubCategorias;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btbBuscarCartas;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.GroupBox grpCategorias;
