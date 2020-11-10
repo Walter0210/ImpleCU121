@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CU121.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,13 +7,19 @@ namespace CU121.FabricacionPura
 {
     class GestorInformeProducto
     {
-        public EstructuraCarta buscarCartasVigentes(DateTime desde, DateTime hasta)
+        public List<IEstructuraCarta> buscarCartasVigentes(DateTime desde, DateTime hasta, List<IEstructuraCarta> cartasTodas)
         {
-            EstructuraCarta[] cartas;
+            List<IEstructuraCarta> cartasVigentes = new List<IEstructuraCarta>();
 
-            
-            
-            return ;
+            foreach (EstructuraCarta carta in cartasTodas)
+            {
+                if (desde <= carta.FechaFinVigencia && carta.FechaFinVigencia <= hasta)
+                {
+                    cartasVigentes.Add(carta);
+                }
+            }
+
+            return cartasVigentes;
         }
     }
 }

@@ -91,5 +91,10 @@ namespace CU121.FabricacionPura
             get => componentes;
             set => componentes = value;
         }
+
+        public IEstructuraCarta obtenerHijo()
+        {
+            return this.componentes;
+        }
     }
 }

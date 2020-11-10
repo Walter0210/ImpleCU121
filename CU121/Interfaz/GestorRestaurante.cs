@@ -1,4 +1,5 @@
-﻿using CU121.FabricacionPura;
+﻿using CU121.Dominio;
+using CU121.FabricacionPura;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,9 @@ namespace CU121.Interfaz
 
     {
         private GestorInformeProducto gestor;
-        private List<EstructuraCarta> todasCartas;
+        private List<IEstructuraCarta> todasCartas;
+        private List<IEstructuraCarta> cartasVigentes;
+        private List<IEstructuraCarta> categorias;
 
         public GestorRestaurante()
         {
@@ -27,7 +30,13 @@ namespace CU121.Interfaz
 
             if (fechaFin > fechaInicio)
             {
-                gestor.buscarCartasVigentes(fechaInicio, fechaFin);
+                cartasVigentes = gestor.buscarCartasVigentes(fechaInicio, fechaFin, todasCartas);
+
+                foreach (EstructuraCarta carta in cartasVigentes)
+                {
+                    categorias.Add(carta.obtenerHijo());
+                }
+                dgvCategorias.DataSource = categorias;
             }
             else
             {
@@ -38,7 +47,10 @@ namespace CU121.Interfaz
         private void GestorRestaurante_Load(object sender, EventArgs e)
         {
             //desabilitar todo e ir habilitando de a poco
+            gestor = new GestorInformeProducto();
+            //hay que armar todos los objetos de carta y producto
 
+            carta1 = new EstructuraCarta("carta1", true, null, Convert.ToDateTime("10/10/2020"), Convert.ToDateTime("10/11/2020"), Convert.ToDateTime("10/11/2021"), "primerCarta", 1.43f, null, "waltersito");
 
 
         }
