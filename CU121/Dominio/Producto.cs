@@ -19,7 +19,26 @@ namespace CU121.Dominio
             this.precio = precio;
         }
 
-
+        public DateTime fechaDeCreacion 
+        {
+            get => fechaCreacion;
+            set => fechaCreacion = value;
+        }
+        public int fotografia
+        {
+            get => foto;
+            set => foto = value;
+        }
+        public string nombreProducto
+        {
+            get => nombre;
+            set => nombre = value;
+        }
+        public float precioProducto
+        {
+            get => precio;
+            set => precio = value;
+        }
     }
 
 }
