@@ -18,8 +18,5 @@ namespace CU121.Dominio
             this.nombre = nombre;
             this.precio = precio;
         }
-
-
     }
-
 }
