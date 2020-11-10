@@ -17,9 +17,8 @@ namespace CU121
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(); //Falta definir el form con el que tiene que arrancar.
+
+            Application.Run(new Interfaz.GestorRestaurante());
         }
-
-
     }
 }

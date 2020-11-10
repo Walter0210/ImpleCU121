@@ -76,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(100, 94);
+            this.label2.Location = new System.Drawing.Point(100, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 1;
@@ -85,7 +85,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(103, 123);
+            this.label3.Location = new System.Drawing.Point(103, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 15);
             this.label3.TabIndex = 1;
@@ -102,14 +102,14 @@
             // 
             // dtpFechaDesde
             // 
-            this.dtpFechaDesde.Location = new System.Drawing.Point(199, 88);
+            this.dtpFechaDesde.Location = new System.Drawing.Point(208, 81);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(250, 23);
             this.dtpFechaDesde.TabIndex = 3;
             // 
             // dtpFechaHasta
             // 
-            this.dtpFechaHasta.Location = new System.Drawing.Point(199, 117);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(208, 110);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(250, 23);
             this.dtpFechaHasta.TabIndex = 4;
@@ -126,7 +126,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(494, 88);
+            this.button1.Location = new System.Drawing.Point(474, 79);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 52);
             this.button1.TabIndex = 5;
@@ -136,9 +136,9 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(18, 419);
+            this.btnGenerar.Location = new System.Drawing.Point(12, 419);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(673, 65);
+            this.btnGenerar.Size = new System.Drawing.Size(679, 65);
             this.btnGenerar.TabIndex = 5;
             this.btnGenerar.Text = "Generar Informe";
             this.btnGenerar.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@
             this.cboOrdenarSubCategorias.FormattingEnabled = true;
             this.cboOrdenarSubCategorias.Location = new System.Drawing.Point(6, 191);
             this.cboOrdenarSubCategorias.Name = "cboOrdenarSubCategorias";
-            this.cboOrdenarSubCategorias.Size = new System.Drawing.Size(184, 23);
+            this.cboOrdenarSubCategorias.Size = new System.Drawing.Size(200, 23);
             this.cboOrdenarSubCategorias.TabIndex = 2;
             this.cboOrdenarSubCategorias.Text = "Ordenar de Manera...";
             // 
@@ -187,7 +187,7 @@
             // 
             this.btnMostrarProductos.Location = new System.Drawing.Point(6, 222);
             this.btnMostrarProductos.Name = "btnMostrarProductos";
-            this.btnMostrarProductos.Size = new System.Drawing.Size(184, 23);
+            this.btnMostrarProductos.Size = new System.Drawing.Size(200, 23);
             this.btnMostrarProductos.TabIndex = 5;
             this.btnMostrarProductos.Text = "Mostrar SubCategorias";
             this.btnMostrarProductos.UseVisualStyleBackColor = true;
