@@ -213,6 +213,11 @@ namespace CU121.Interfaz
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Generar???", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                FormaVisualizacion formVis = new FormaVisualizacion();
+                formVis.Show();
+            }
         }
     }
 }
