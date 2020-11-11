@@ -41,5 +41,10 @@ namespace CU121.Dominio
             get => precio;
             set => precio = value;
         }
+
+        public conocerDetallePedido()
+        { 
+            
+        }
     }
 }
