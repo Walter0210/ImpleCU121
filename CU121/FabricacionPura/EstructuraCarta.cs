@@ -1,14 +1,13 @@
 ﻿using CU121.Dominio;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CU121.FabricacionPura
 {
     class EstructuraCarta : IEstructuraCarta
     {
         private string comentario;
-        private EstructuraCarta componentes;
+        private List<EstructuraCarta> componentes;
         private bool esFavorito;
         private DateTime fechaCreacion;
         private DateTime fechaFinVigencia;
@@ -18,7 +17,18 @@ namespace CU121.FabricacionPura
         private Producto producto;
         private string responsableCreacion;
 
-        public EstructuraCarta(string comentario, bool esFavorito, EstructuraCarta componentes, DateTime fechaCreacion, DateTime fechaFinVigencia, DateTime fechaInicioVigencia, string nombre, float precio, Producto producto, string responsableCreacion)
+        public EstructuraCarta(string nombre)
+        {
+            this.nombre = nombre;
+        }
+
+        public EstructuraCarta(List<EstructuraCarta> componentes, string nombre)
+        {
+            this.componentes = componentes;
+            this.nombre = nombre;
+        }
+
+        public EstructuraCarta(string comentario, bool esFavorito, List<EstructuraCarta> componentes, DateTime fechaCreacion, DateTime fechaFinVigencia, DateTime fechaInicioVigencia, string nombre, float precio, Producto producto, string responsableCreacion)
         {
             Comentario = comentario;
             EsFavorito = esFavorito;
@@ -86,7 +96,7 @@ namespace CU121.FabricacionPura
             set => responsableCreacion = value;
         }
 
-        public EstructuraCarta Componentes
+        public List<EstructuraCarta> Componentes
         {
             get => componentes;
             set => componentes = value;
@@ -94,7 +104,7 @@ namespace CU121.FabricacionPura
 
 
 
-        public EstructuraCarta obtenerHijo()
+        public List<EstructuraCarta> obtenerHijo()
         {
             return this.componentes;
         }

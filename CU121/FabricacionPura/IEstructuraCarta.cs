@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CU121.Dominio
+﻿namespace CU121.Dominio
 {
     interface IEstructuraCarta
     {
@@ -18,7 +14,7 @@ namespace CU121.Dominio
 
         void getNombre()
         {
-            
+
         }
 
         public void getNombreProducto()

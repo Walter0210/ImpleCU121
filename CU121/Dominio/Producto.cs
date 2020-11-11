@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CU121.Dominio
 {
@@ -22,6 +20,6 @@ namespace CU121.Dominio
             this.nombre = nombre;
             this.precio = precio;
         }
-           
+
     }
 }

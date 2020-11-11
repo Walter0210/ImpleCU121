@@ -122,8 +122,9 @@
             this.btnBuscarSubCategorias.Name = "btnBuscarSubCategorias";
             this.btnBuscarSubCategorias.Size = new System.Drawing.Size(203, 23);
             this.btnBuscarSubCategorias.TabIndex = 5;
-            this.btnBuscarSubCategorias.Text = "Mostrar SubCategorias";
+            this.btnBuscarSubCategorias.Text = "Buscar SubCategorias";
             this.btnBuscarSubCategorias.UseVisualStyleBackColor = true;
+            this.btnBuscarSubCategorias.Click += new System.EventHandler(this.btnBuscarSubCategorias_Click);
             // 
             // btbBuscarCartas
             // 
@@ -159,9 +160,12 @@
             // 
             // dgvCategorias
             // 
+            this.dgvCategorias.AllowUserToAddRows = false;
+            this.dgvCategorias.AllowUserToDeleteRows = false;
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorias.Location = new System.Drawing.Point(6, 22);
             this.dgvCategorias.Name = "dgvCategorias";
+            this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.Size = new System.Drawing.Size(203, 163);
             this.dgvCategorias.TabIndex = 6;
             this.dgvCategorias.Text = "dataGridView1";
@@ -190,8 +194,9 @@
             this.btnMostrarProductos.Name = "btnMostrarProductos";
             this.btnMostrarProductos.Size = new System.Drawing.Size(200, 23);
             this.btnMostrarProductos.TabIndex = 5;
-            this.btnMostrarProductos.Text = "Mostrar SubCategorias";
+            this.btnMostrarProductos.Text = "Buscar Productos";
             this.btnMostrarProductos.UseVisualStyleBackColor = true;
+            this.btnMostrarProductos.Click += new System.EventHandler(this.btnMostrarProductos_Click);
             // 
             // grpSubCategorias
             // 

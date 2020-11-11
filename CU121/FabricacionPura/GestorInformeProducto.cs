@@ -1,7 +1,5 @@
-﻿using CU121.Dominio;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CU121.FabricacionPura
 {
@@ -19,6 +17,22 @@ namespace CU121.FabricacionPura
                 }
             }
             return cartasVigentes;
+        }
+
+        public List<EstructuraCarta> obtenerHijos(List<EstructuraCarta> padres)
+        {
+            List<EstructuraCarta> hijos = new List<EstructuraCarta>();
+
+
+            foreach (EstructuraCarta listaHijos in padres)
+            {
+                List<EstructuraCarta> aux = listaHijos.obtenerHijo();
+                foreach (EstructuraCarta hijo in aux)
+                {
+                    hijos.Add(hijo);
+                }
+            }
+            return hijos;
         }
     }
 }
