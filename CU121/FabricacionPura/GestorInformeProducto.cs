@@ -29,8 +29,10 @@ namespace CU121.FabricacionPura
                 List<EstructuraCarta> aux = listaHijos.obtenerHijo();
                 foreach (EstructuraCarta hijo in aux)
                 {
-                    hijos.Add(hijo);
-                }
+                    if (!hijos.Contains(hijo))
+                    {
+                        hijos.Add(hijo);
+                    }                }
             }
             return hijos;
         }

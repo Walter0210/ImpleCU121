@@ -40,6 +40,10 @@ namespace CU121.Interfaz
 
         private void GestorRestaurante_Load(object sender, EventArgs e)
         {
+            dgvCategorias.AutoGenerateColumns = false;
+            dgvSubCategorias.AutoGenerateColumns = false;
+            dgvProductos.AutoGenerateColumns = false;
+
             //desabilitar todo e ir habilitando de a poco.
             gestor = new GestorInformeProducto();
             todasCartas = new List<EstructuraCarta>();
@@ -138,6 +142,11 @@ namespace CU121.Interfaz
         private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             seleccionoAlguna = true;
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Generar???", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
         }
     }
 }

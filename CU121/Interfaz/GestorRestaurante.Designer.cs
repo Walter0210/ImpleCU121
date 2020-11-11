@@ -40,19 +40,22 @@
             this.btnGenerar = new System.Windows.Forms.Button();
             this.grpCategorias = new System.Windows.Forms.GroupBox();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
-            this.dgvSubCategorias = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboOrdenarSubCategorias = new System.Windows.Forms.ComboBox();
             this.btnMostrarProductos = new System.Windows.Forms.Button();
             this.grpSubCategorias = new System.Windows.Forms.GroupBox();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.dgvSubCategorias = new System.Windows.Forms.DataGridView();
+            this.ColumnaSubCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboOrdenarProductos = new System.Windows.Forms.ComboBox();
             this.grpProductos = new System.Windows.Forms.GroupBox();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.ColumnaProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpCategorias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSubCategorias)).BeginInit();
             this.grpSubCategorias.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubCategorias)).BeginInit();
             this.grpProductos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -145,6 +148,7 @@
             this.btnGenerar.TabIndex = 5;
             this.btnGenerar.Text = "Generar Informe";
             this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // grpCategorias
             // 
@@ -162,8 +166,10 @@
             // 
             this.dgvCategorias.AllowUserToAddRows = false;
             this.dgvCategorias.AllowUserToDeleteRows = false;
-            this.dgvCategorias.AllowUserToOrderColumns = true;
+            this.dgvCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
             this.dgvCategorias.Location = new System.Drawing.Point(6, 22);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
@@ -174,14 +180,13 @@
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick);
             this.dgvCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick);
             // 
-            // dgvSubCategorias
+            // Column1
             // 
-            this.dgvSubCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubCategorias.Location = new System.Drawing.Point(6, 22);
-            this.dgvSubCategorias.Name = "dgvSubCategorias";
-            this.dgvSubCategorias.Size = new System.Drawing.Size(200, 163);
-            this.dgvSubCategorias.TabIndex = 7;
-            this.dgvSubCategorias.Text = "dataGridView2";
+            this.Column1.DataPropertyName = "nombre";
+            this.Column1.HeaderText = "Nombre Carta";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // cboOrdenarSubCategorias
             // 
@@ -214,14 +219,28 @@
             this.grpSubCategorias.TabStop = false;
             this.grpSubCategorias.Text = "SubCategorias";
             // 
-            // dgvProductos
+            // dgvSubCategorias
             // 
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(6, 22);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(203, 192);
-            this.dgvProductos.TabIndex = 7;
-            this.dgvProductos.Text = "dataGridView3";
+            this.dgvSubCategorias.AllowUserToAddRows = false;
+            this.dgvSubCategorias.AllowUserToDeleteRows = false;
+            this.dgvSubCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSubCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSubCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnaSubCate});
+            this.dgvSubCategorias.Location = new System.Drawing.Point(6, 22);
+            this.dgvSubCategorias.Name = "dgvSubCategorias";
+            this.dgvSubCategorias.ReadOnly = true;
+            this.dgvSubCategorias.Size = new System.Drawing.Size(200, 163);
+            this.dgvSubCategorias.TabIndex = 7;
+            this.dgvSubCategorias.Text = "dataGridView2";
+            // 
+            // ColumnaSubCate
+            // 
+            this.ColumnaSubCate.DataPropertyName = "nombre";
+            this.ColumnaSubCate.HeaderText = "Nombre SubCategoria";
+            this.ColumnaSubCate.Name = "ColumnaSubCate";
+            this.ColumnaSubCate.ReadOnly = true;
+            this.ColumnaSubCate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // cboOrdenarProductos
             // 
@@ -242,6 +261,28 @@
             this.grpProductos.TabIndex = 8;
             this.grpProductos.TabStop = false;
             this.grpProductos.Text = "Productos";
+            // 
+            // dgvProductos
+            // 
+            this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AllowUserToDeleteRows = false;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnaProductos});
+            this.dgvProductos.Location = new System.Drawing.Point(6, 22);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
+            this.dgvProductos.Size = new System.Drawing.Size(203, 192);
+            this.dgvProductos.TabIndex = 7;
+            this.dgvProductos.Text = "dataGridView3";
+            // 
+            // ColumnaProductos
+            // 
+            this.ColumnaProductos.DataPropertyName = "nombre";
+            this.ColumnaProductos.HeaderText = "Nombre Producto";
+            this.ColumnaProductos.Name = "ColumnaProductos";
+            this.ColumnaProductos.ReadOnly = true;
             // 
             // GestorRestaurante
             // 
@@ -268,10 +309,10 @@
             this.Load += new System.EventHandler(this.GestorRestaurante_Load);
             this.grpCategorias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSubCategorias)).EndInit();
             this.grpSubCategorias.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubCategorias)).EndInit();
             this.grpProductos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +339,8 @@
         private System.Windows.Forms.ComboBox cboOrdenarProductos;
         private System.Windows.Forms.GroupBox grpProductos;
         private System.Windows.Forms.DataGridView dgvCategorias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaSubCate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaProductos;
     }
 }
