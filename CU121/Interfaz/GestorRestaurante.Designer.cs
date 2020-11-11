@@ -38,8 +38,8 @@
             this.btnBuscarSubCategorias = new System.Windows.Forms.Button();
             this.btbBuscarCartas = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
-            this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.grpCategorias = new System.Windows.Forms.GroupBox();
+            this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.dgvSubCategorias = new System.Windows.Forms.DataGridView();
             this.cboOrdenarSubCategorias = new System.Windows.Forms.ComboBox();
             this.btnMostrarProductos = new System.Windows.Forms.Button();
@@ -47,8 +47,8 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.cboOrdenarProductos = new System.Windows.Forms.ComboBox();
             this.grpProductos = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.grpCategorias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubCategorias)).BeginInit();
             this.grpSubCategorias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -145,15 +145,6 @@
             this.btnGenerar.Text = "Generar Informe";
             this.btnGenerar.UseVisualStyleBackColor = true;
             // 
-            // dgvCategorias
-            // 
-            this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Location = new System.Drawing.Point(6, 22);
-            this.dgvCategorias.Name = "dgvCategorias";
-            this.dgvCategorias.Size = new System.Drawing.Size(203, 163);
-            this.dgvCategorias.TabIndex = 7;
-            this.dgvCategorias.Text = "dataGridView1";
-            // 
             // grpCategorias
             // 
             this.grpCategorias.Controls.Add(this.dgvCategorias);
@@ -165,6 +156,15 @@
             this.grpCategorias.TabIndex = 8;
             this.grpCategorias.TabStop = false;
             this.grpCategorias.Text = "Categorías";
+            // 
+            // dgvCategorias
+            // 
+            this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategorias.Location = new System.Drawing.Point(6, 22);
+            this.dgvCategorias.Name = "dgvCategorias";
+            this.dgvCategorias.Size = new System.Drawing.Size(203, 163);
+            this.dgvCategorias.TabIndex = 6;
+            this.dgvCategorias.Text = "dataGridView1";
             // 
             // dgvSubCategorias
             // 
@@ -250,12 +250,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "GestorRestaurante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestorRestaurante";
             this.Load += new System.EventHandler(this.GestorRestaurante_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.grpCategorias.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubCategorias)).EndInit();
             this.grpSubCategorias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
@@ -277,7 +280,6 @@
         private System.Windows.Forms.Button btnBuscarSubCategorias;
         private System.Windows.Forms.Button btbBuscarCartas;
         private System.Windows.Forms.Button btnGenerar;
-        private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.GroupBox grpCategorias;
         private System.Windows.Forms.DataGridView dgvSubCategorias;
         private System.Windows.Forms.ComboBox cboOrdenarSubCategorias;
@@ -286,5 +288,6 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.ComboBox cboOrdenarProductos;
         private System.Windows.Forms.GroupBox grpProductos;
+        private System.Windows.Forms.DataGridView dgvCategorias;
     }
 }

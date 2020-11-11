@@ -8,7 +8,7 @@ namespace CU121.FabricacionPura
     class EstructuraCarta : IEstructuraCarta
     {
         private string comentario;
-        private IEstructuraCarta componentes;
+        private EstructuraCarta componentes;
         private bool esFavorito;
         private DateTime fechaCreacion;
         private DateTime fechaFinVigencia;
@@ -18,7 +18,7 @@ namespace CU121.FabricacionPura
         private Producto producto;
         private string responsableCreacion;
 
-        public EstructuraCarta(string comentario, bool esFavorito, IEstructuraCarta componentes, DateTime fechaCreacion, DateTime fechaFinVigencia, DateTime fechaInicioVigencia, string nombre, float precio, Producto producto, string responsableCreacion)
+        public EstructuraCarta(string comentario, bool esFavorito, EstructuraCarta componentes, DateTime fechaCreacion, DateTime fechaFinVigencia, DateTime fechaInicioVigencia, string nombre, float precio, Producto producto, string responsableCreacion)
         {
             Comentario = comentario;
             EsFavorito = esFavorito;
@@ -86,13 +86,15 @@ namespace CU121.FabricacionPura
             set => responsableCreacion = value;
         }
 
-        public IEstructuraCarta Componentes
+        public EstructuraCarta Componentes
         {
             get => componentes;
             set => componentes = value;
         }
 
-        public IEstructuraCarta obtenerHijo()
+
+
+        public EstructuraCarta obtenerHijo()
         {
             return this.componentes;
         }

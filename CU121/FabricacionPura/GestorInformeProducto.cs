@@ -7,9 +7,9 @@ namespace CU121.FabricacionPura
 {
     class GestorInformeProducto
     {
-        public List<IEstructuraCarta> buscarCartasVigentes(DateTime desde, DateTime hasta, List<IEstructuraCarta> cartasTodas)
+        public List<EstructuraCarta> buscarCartasVigentes(DateTime desde, DateTime hasta, List<EstructuraCarta> cartasTodas)
         {
-            List<IEstructuraCarta> cartasVigentes = new List<IEstructuraCarta>();
+            List<EstructuraCarta> cartasVigentes = new List<EstructuraCarta>();
 
             foreach (EstructuraCarta carta in cartasTodas)
             {
@@ -18,7 +18,6 @@ namespace CU121.FabricacionPura
                     cartasVigentes.Add(carta);
                 }
             }
-
             return cartasVigentes;
         }
     }

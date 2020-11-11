@@ -11,6 +11,10 @@ namespace CU121.Dominio
         private string nombre;
         private float precio;
 
+        public Producto()
+        {
+        }
+
         public Producto(DateTime fechaCreacion, int foto, string nombre, float precio)
         {
             this.fechaCreacion = fechaCreacion;
@@ -18,5 +22,6 @@ namespace CU121.Dominio
             this.nombre = nombre;
             this.precio = precio;
         }
+           
     }
 }
