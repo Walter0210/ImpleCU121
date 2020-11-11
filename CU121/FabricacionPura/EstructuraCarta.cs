@@ -17,6 +17,19 @@ namespace CU121.FabricacionPura
         private Producto producto;
         private string responsableCreacion;
 
+        public EstructuraCarta(bool esFavorito, DateTime fechaCreacion, string nombre, Producto producto)
+        {
+            this.esFavorito = esFavorito;
+            this.fechaCreacion = fechaCreacion;
+            this.nombre = nombre;
+            this.producto = producto;
+        }
+
+        public EstructuraCarta(Producto producto)
+        {
+            this.producto = producto;
+        }
+
         public EstructuraCarta(string nombre)
         {
             this.nombre = nombre;

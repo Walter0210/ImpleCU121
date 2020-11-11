@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cboOrdenarCategorias = new System.Windows.Forms.ComboBox();
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarSubCategorias = new System.Windows.Forms.Button();
@@ -41,12 +40,10 @@
             this.grpCategorias = new System.Windows.Forms.GroupBox();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboOrdenarSubCategorias = new System.Windows.Forms.ComboBox();
             this.btnMostrarProductos = new System.Windows.Forms.Button();
             this.grpSubCategorias = new System.Windows.Forms.GroupBox();
             this.dgvSubCategorias = new System.Windows.Forms.DataGridView();
             this.ColumnaSubCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboOrdenarProductos = new System.Windows.Forms.ComboBox();
             this.grpProductos = new System.Windows.Forms.GroupBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.ColumnaProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,15 +93,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Fecha hasta";
             // 
-            // cboOrdenarCategorias
-            // 
-            this.cboOrdenarCategorias.FormattingEnabled = true;
-            this.cboOrdenarCategorias.Location = new System.Drawing.Point(6, 191);
-            this.cboOrdenarCategorias.Name = "cboOrdenarCategorias";
-            this.cboOrdenarCategorias.Size = new System.Drawing.Size(203, 23);
-            this.cboOrdenarCategorias.TabIndex = 2;
-            this.cboOrdenarCategorias.Text = "Ordenar de Manera...";
-            // 
             // dtpFechaDesde
             // 
             this.dtpFechaDesde.Location = new System.Drawing.Point(208, 81);
@@ -153,7 +141,6 @@
             // grpCategorias
             // 
             this.grpCategorias.Controls.Add(this.dgvCategorias);
-            this.grpCategorias.Controls.Add(this.cboOrdenarCategorias);
             this.grpCategorias.Controls.Add(this.btnBuscarSubCategorias);
             this.grpCategorias.Location = new System.Drawing.Point(12, 159);
             this.grpCategorias.Name = "grpCategorias";
@@ -174,7 +161,7 @@
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorias.Size = new System.Drawing.Size(203, 163);
+            this.dgvCategorias.Size = new System.Drawing.Size(203, 192);
             this.dgvCategorias.TabIndex = 6;
             this.dgvCategorias.Text = "dataGridView1";
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick);
@@ -187,15 +174,6 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // cboOrdenarSubCategorias
-            // 
-            this.cboOrdenarSubCategorias.FormattingEnabled = true;
-            this.cboOrdenarSubCategorias.Location = new System.Drawing.Point(6, 191);
-            this.cboOrdenarSubCategorias.Name = "cboOrdenarSubCategorias";
-            this.cboOrdenarSubCategorias.Size = new System.Drawing.Size(200, 23);
-            this.cboOrdenarSubCategorias.TabIndex = 2;
-            this.cboOrdenarSubCategorias.Text = "Ordenar de Manera...";
             // 
             // btnMostrarProductos
             // 
@@ -210,7 +188,6 @@
             // grpSubCategorias
             // 
             this.grpSubCategorias.Controls.Add(this.dgvSubCategorias);
-            this.grpSubCategorias.Controls.Add(this.cboOrdenarSubCategorias);
             this.grpSubCategorias.Controls.Add(this.btnMostrarProductos);
             this.grpSubCategorias.Location = new System.Drawing.Point(243, 159);
             this.grpSubCategorias.Name = "grpSubCategorias";
@@ -230,7 +207,8 @@
             this.dgvSubCategorias.Location = new System.Drawing.Point(6, 22);
             this.dgvSubCategorias.Name = "dgvSubCategorias";
             this.dgvSubCategorias.ReadOnly = true;
-            this.dgvSubCategorias.Size = new System.Drawing.Size(200, 163);
+            this.dgvSubCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSubCategorias.Size = new System.Drawing.Size(200, 192);
             this.dgvSubCategorias.TabIndex = 7;
             this.dgvSubCategorias.Text = "dataGridView2";
             // 
@@ -242,19 +220,9 @@
             this.ColumnaSubCate.ReadOnly = true;
             this.ColumnaSubCate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // cboOrdenarProductos
-            // 
-            this.cboOrdenarProductos.FormattingEnabled = true;
-            this.cboOrdenarProductos.Location = new System.Drawing.Point(6, 222);
-            this.cboOrdenarProductos.Name = "cboOrdenarProductos";
-            this.cboOrdenarProductos.Size = new System.Drawing.Size(203, 23);
-            this.cboOrdenarProductos.TabIndex = 2;
-            this.cboOrdenarProductos.Text = "Ordenar de Manera...";
-            // 
             // grpProductos
             // 
             this.grpProductos.Controls.Add(this.dgvProductos);
-            this.grpProductos.Controls.Add(this.cboOrdenarProductos);
             this.grpProductos.Location = new System.Drawing.Point(474, 159);
             this.grpProductos.Name = "grpProductos";
             this.grpProductos.Size = new System.Drawing.Size(215, 254);
@@ -273,7 +241,7 @@
             this.dgvProductos.Location = new System.Drawing.Point(6, 22);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.Size = new System.Drawing.Size(203, 192);
+            this.dgvProductos.Size = new System.Drawing.Size(203, 223);
             this.dgvProductos.TabIndex = 7;
             this.dgvProductos.Text = "dataGridView3";
             // 
@@ -324,7 +292,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboOrdenarCategorias;
         private System.Windows.Forms.DateTimePicker dtpFechaDesde;
         private System.Windows.Forms.DateTimePicker dtpFechaHasta;
         private System.Windows.Forms.Button btnBuscarSubCategorias;
@@ -332,15 +299,13 @@
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.GroupBox grpCategorias;
         private System.Windows.Forms.DataGridView dgvSubCategorias;
-        private System.Windows.Forms.ComboBox cboOrdenarSubCategorias;
         private System.Windows.Forms.Button btnMostrarProductos;
         private System.Windows.Forms.GroupBox grpSubCategorias;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.ComboBox cboOrdenarProductos;
         private System.Windows.Forms.GroupBox grpProductos;
         private System.Windows.Forms.DataGridView dgvCategorias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaSubCate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

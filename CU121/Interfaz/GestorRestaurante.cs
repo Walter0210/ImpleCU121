@@ -50,54 +50,82 @@ namespace CU121.Interfaz
             btnMostrarProductos.Enabled = false;
             btnGenerar.Enabled = false;
 
-            //desabilitar todo e ir habilitando de a poco.
             gestor = new GestorInformeProducto();
             todasCartas = new List<EstructuraCarta>();
 
             //hay que armar todos los objetos de carta y producto.
             //Productos
-            Producto producto1 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Costeleta", 200);
-            Producto producto2 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Bife", 200);
-            Producto producto3 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Salmon", 200);
-            Producto producto4 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Pollo asado", 200);
-            Producto producto5 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Espageti", 200);
-            Producto producto6 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Tallarines", 200);
-            Producto producto7 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Ñoquis", 200);
-            Producto producto8 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Moñitos", 200);
-            Producto producto9 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Ravioles", 200);
-            Producto producto10 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Canelones", 200);
-            Producto producto11 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Agua", 200);
-            Producto producto12 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Gaseosa 500ml", 200);
-            Producto producto13 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Vino", 200);
-            Producto producto14 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Cerveza", 200);
-            Producto producto15 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Tiramisu", 200);
-            Producto producto16 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Chocotorta", 200);
-            Producto producto17 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Escoses", 200);
-            Producto producto18 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Americano", 200);
-            Producto producto19 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Milanesa con ensalada", 200);
-            Producto producto20 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Bife Pollo con pure", 200);
-            Producto producto21 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Hamburguesas de garvenzos con pure", 200);
-            Producto producto22 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Ensalada gohun", 200);
-            Producto producto23 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Hamburgesa", 200);
-            Producto producto24 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Pizza", 200);
+            //Producto producto1 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Costeleta", 200);
+            //Producto producto2 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Bife", 200);
+            //Producto producto3 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Salmon", 200);
+            //Producto producto4 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Pollo asado", 200);
+            //Producto producto5 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Espageti", 200);
+            //Producto producto6 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Tallarines", 200);
+            //Producto producto7 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Ñoquis", 200);
+            //Producto producto8 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Moñitos", 200);
+            //Producto producto9 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Ravioles", 200);
+            //Producto producto10 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Canelones", 200);
+            //Producto producto11 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Agua", 200);
+            //Producto producto12 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Gaseosa 500ml", 200);
+            //Producto producto13 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Vino", 200);
+            //Producto producto14 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Cerveza", 200);
+            //Producto producto15 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Tiramisu", 200);
+            //Producto producto16 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Chocotorta", 200);
+            //Producto producto17 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Escoses", 200);
+            //Producto producto18 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Americano", 200);
+            //Producto producto19 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Milanesa con ensalada", 200);
+            //Producto producto20 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Bife Pollo con pure", 200);
+            //Producto producto21 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Hamburguesas de garvenzos con pure", 200);
+            //Producto producto22 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Ensalada gohun", 200);
+            //Producto producto23 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Hamburgesa", 200);
+            //Producto producto24 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Pizza", 200);
 
 
 
             //Subconjuntos de productos
 
 
-            List<IEstructuraCarta> pc1 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> pc2 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> pp1 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> pp2 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> pp3 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> pb1 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> pb2 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> ppo1 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> ppo2 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> pm1 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> pm2 = new List<IEstructuraCarta>();
-            List<IEstructuraCarta> pm3 = new List<IEstructuraCarta>();
+            EstructuraCarta producto1 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Costeleta", null);
+            EstructuraCarta producto2 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Bife", null);
+            EstructuraCarta producto3 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Salmon", null);
+            EstructuraCarta producto4 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Pollo asado", null);
+            EstructuraCarta producto5 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Espageti", null);
+            EstructuraCarta producto6 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Tallarines", null);
+            EstructuraCarta producto7 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Ñoquis", null);
+            EstructuraCarta producto8 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Moñitos", null);
+            EstructuraCarta producto9 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Ravioles", null);
+            EstructuraCarta producto10 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Canelones", null);
+            EstructuraCarta producto11 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Agua", null);
+            EstructuraCarta producto12 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Gaseosa 500ml", null);
+            EstructuraCarta producto13 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Vino", null);
+            EstructuraCarta producto14 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Cerveza", null);
+            EstructuraCarta producto15 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Tiramisu", null);
+            EstructuraCarta producto16 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Chocotorta", null);
+            EstructuraCarta producto17 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Escoses", null);
+            EstructuraCarta producto18 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Americano", null);
+            EstructuraCarta producto19 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Milanesa con ensalada", null);
+            EstructuraCarta producto20 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Bife Pollo con pure", null);
+            EstructuraCarta producto21 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Hamburguesas de garvenzos con pure", null);
+            EstructuraCarta producto22 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Ensalada gohun", null);
+            EstructuraCarta producto23 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Hamburgesa", null);
+            EstructuraCarta producto24 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Pizza", null);
+
+
+            //Conjuntos de productos
+
+
+            List<EstructuraCarta> pc1 = new List<EstructuraCarta>();
+            List<EstructuraCarta> pc2 = new List<EstructuraCarta>();
+            List<EstructuraCarta> pp1 = new List<EstructuraCarta>();
+            List<EstructuraCarta> pp2 = new List<EstructuraCarta>();
+            List<EstructuraCarta> pp3 = new List<EstructuraCarta>();
+            List<EstructuraCarta> pb1 = new List<EstructuraCarta>();
+            List<EstructuraCarta> pb2 = new List<EstructuraCarta>();
+            List<EstructuraCarta> ppo1 = new List<EstructuraCarta>();
+            List<EstructuraCarta> ppo2 = new List<EstructuraCarta>();
+            List<EstructuraCarta> pm1 = new List<EstructuraCarta>();
+            List<EstructuraCarta> pm2 = new List<EstructuraCarta>();
+            List<EstructuraCarta> pm3 = new List<EstructuraCarta>();
 
             pc1.Add(producto1); pc1.Add(producto2);
             pc2.Add(producto3); pc2.Add(producto4);
@@ -113,18 +141,18 @@ namespace CU121.Interfaz
             pm3.Add(producto23); pm3.Add(producto24);
 
             //Subcategorias
-            EstructuraCarta subcategoriaCarnes1 = new EstructuraCarta("Rojas");
-            EstructuraCarta subcategoriaCarnes2 = new EstructuraCarta("Blancas");
-            EstructuraCarta subcategoriaPastas1 = new EstructuraCarta("Largas");
-            EstructuraCarta subcategoriaPastas2 = new EstructuraCarta("Cortas");
-            EstructuraCarta subcategoriaPastas3 = new EstructuraCarta("Rellenas");
-            EstructuraCarta subcategoriaBebidas1 = new EstructuraCarta("Sin alcohol");
-            EstructuraCarta subcategoriaBebidas2 = new EstructuraCarta("Con alcohol");
-            EstructuraCarta subcategoriaPostres1 = new EstructuraCarta("Tortas");
-            EstructuraCarta subcategoriaPostres2 = new EstructuraCarta("Helados");
-            EstructuraCarta subcategoriaMenus1 = new EstructuraCarta("Diario");
-            EstructuraCarta subcategoriaMenus2 = new EstructuraCarta("Vegetariano");
-            EstructuraCarta subcategoriaMenus3 = new EstructuraCarta("Infantil");
+            EstructuraCarta subcategoriaCarnes1 = new EstructuraCarta(pc1, "Rojas");
+            EstructuraCarta subcategoriaCarnes2 = new EstructuraCarta(pc2, "Blancas");
+            EstructuraCarta subcategoriaPastas1 = new EstructuraCarta(pp1, "Largas");
+            EstructuraCarta subcategoriaPastas2 = new EstructuraCarta(pp2, "Cortas");
+            EstructuraCarta subcategoriaPastas3 = new EstructuraCarta(pp3, "Rellenas");
+            EstructuraCarta subcategoriaBebidas1 = new EstructuraCarta(pb1, "Sin alcohol");
+            EstructuraCarta subcategoriaBebidas2 = new EstructuraCarta(pb2, "Con alcohol");
+            EstructuraCarta subcategoriaPostres1 = new EstructuraCarta(ppo1, "Tortas");
+            EstructuraCarta subcategoriaPostres2 = new EstructuraCarta(ppo2, "Helados");
+            EstructuraCarta subcategoriaMenus1 = new EstructuraCarta(pm1, "Diario");
+            EstructuraCarta subcategoriaMenus2 = new EstructuraCarta(pm2, "Vegetariano");
+            EstructuraCarta subcategoriaMenus3 = new EstructuraCarta(pm3, "Infantil");
 
             //Conjunto de subcategorias
             List<EstructuraCarta> sc = new List<EstructuraCarta>();
@@ -195,12 +223,15 @@ namespace CU121.Interfaz
         private void btnMostrarProductos_Click(object sender, EventArgs e)
         {
             SubcategoriasSeleccionadas = new List<EstructuraCarta>();
-            foreach (DataGridViewRow row in this.dgvSubCategorias.SelectedRows)
+            foreach (DataGridViewRow row in dgvSubCategorias.SelectedRows)
             {
                 EstructuraCarta subCategoriaSel = row.DataBoundItem as EstructuraCarta;
                 SubcategoriasSeleccionadas.Add(subCategoriaSel);
             }
-            dgvProductos.DataSource = gestor.obtenerHijos(SubcategoriasSeleccionadas);
+            List<EstructuraCarta> prodCarta = new List<EstructuraCarta>();
+            prodCarta= gestor.obtenerHijos(SubcategoriasSeleccionadas);
+
+            dgvProductos.DataSource = prodCarta;
 
             btnGenerar.Enabled = true;
         }
