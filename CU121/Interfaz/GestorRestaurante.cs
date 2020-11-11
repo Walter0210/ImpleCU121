@@ -13,6 +13,7 @@ namespace CU121.Interfaz
         private List<EstructuraCarta> cartasVigentes;
         private List<EstructuraCarta> categoriasSeleccionadas;
         private List<EstructuraCarta> SubcategoriasSeleccionadas;
+        private bool seleccionoAlguna = false;
 
 
         public GestorRestaurante()
@@ -102,11 +103,24 @@ namespace CU121.Interfaz
         private void btnBuscarSubCategorias_Click(object sender, EventArgs e)
         {
             categoriasSeleccionadas = new List<EstructuraCarta>();
-            foreach (DataGridViewRow row in this.dgvCategorias.SelectedRows)
+
+            if (seleccionoAlguna)
             {
-                EstructuraCarta categoriaSel = row.DataBoundItem as EstructuraCarta;
-                categoriasSeleccionadas.Add(categoriaSel);
+                foreach (DataGridViewRow row in this.dgvCategorias.SelectedRows)
+                {
+                    EstructuraCarta categoriaSel = row.DataBoundItem as EstructuraCarta;
+                    categoriasSeleccionadas.Add(categoriaSel);
+                }  
             }
+            else
+            {
+                foreach (DataGridViewRow row in dgvCategorias.Rows)
+                {
+                    EstructuraCarta categoriaSel = row.DataBoundItem as EstructuraCarta;
+                    categoriasSeleccionadas.Add(categoriaSel);
+                }
+            }
+
             dgvSubCategorias.DataSource = gestor.obtenerHijos(categoriasSeleccionadas);
         }
 
@@ -119,6 +133,11 @@ namespace CU121.Interfaz
                 SubcategoriasSeleccionadas.Add(subCategoriaSel);
             }
             dgvProductos.DataSource = gestor.obtenerHijos(SubcategoriasSeleccionadas);
+        }
+
+        private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionoAlguna = true;
         }
     }
 }
