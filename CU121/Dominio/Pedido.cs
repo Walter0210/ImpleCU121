@@ -9,17 +9,19 @@ namespace CU121.Dominio
         private int cantComensales;
         private DateTime fechaHoraPedido;
         private int nroPedido;
+        private DetallePedido detalle;
 
         public Pedido()
         {
 
         }
 
-        public Pedido(int cantComensales, DateTime fechaHoraPedido, int nroPedido)
+        public Pedido(int cantComensales, DateTime fechaHoraPedido, int nroPedido, DetallePedido detalle)
         {
             this.cantComensales = cantComensales;
             this.fechaHoraPedido = fechaHoraPedido;
             this.nroPedido = nroPedido;
+            this.detalle = detalle;
         }
 
         public int CantComensales
@@ -38,6 +40,10 @@ namespace CU121.Dominio
             set => nroPedido = value;
         }
 
-
+        public DetallePedido DetallePedido
+        {
+            get => detalle;
+            set => detalle = value;
+        }
     }
 }
