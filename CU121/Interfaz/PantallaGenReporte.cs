@@ -208,6 +208,7 @@ namespace CU121.Interfaz
 
             dgvSubCategorias.DataSource = gestor.buscarSubCategorias(categoriasSeleccionadas);
             btnMostrarProductos.Enabled = true;
+            btnGenerar.Enabled = true;
         }
 
         private void btnMostrarProductos_Click(object sender, EventArgs e)
@@ -222,7 +223,13 @@ namespace CU121.Interfaz
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Estas seguro que queres generar el infore?", "MessageBox Title", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                FormaVisualizacion fomvis = new FormaVisualizacion();
+                fomvis.Show();
+            }
         }
     }
 }
