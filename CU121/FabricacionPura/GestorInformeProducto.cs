@@ -45,6 +45,7 @@ namespace CU121.FabricacionPura
             foreach (EstructuraCarta categoria in categoriasSeleccionadas)
             {
                 List<IEstructuraCarta> subCates = categoria.obtenerHijo();
+                
                 foreach (EstructuraCarta subcategoria in subCates)
                 {
                     subCategoriasCarta.Add(categoria);
@@ -52,23 +53,6 @@ namespace CU121.FabricacionPura
             }
             return subCategoriasCarta;
         }
-
-        //public BindingList<EstructuraCarta> obtenerHijos(BindingList<EstructuraCarta> padres)
-        //{
-        //    BindingList<EstructuraCarta> hijos = new BindingList<EstructuraCarta>();
-
-        //    foreach (EstructuraCarta listaHijos in padres)
-        //    {
-        //        List<EstructuraCarta> aux = listaHijos.obtenerHijo();
-        //        foreach (EstructuraCarta hijo in aux)
-        //        {
-        //            if (!hijos.Contains(hijo))
-        //            {
-        //                hijos.Add(hijo);
-        //            }                }
-        //    }
-        //    return hijos;
-        //}
 
         public String buscarPedidosConProductos(DateTime inicio, DateTime fin, List<EstructuraCarta> productosSelec, List<Pedido> todosLosPedidos, List<DetallePedido> todosLosDetalles)
         {

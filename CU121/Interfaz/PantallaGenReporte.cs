@@ -44,7 +44,6 @@ namespace CU121.Interfaz
             {
                 MessageBox.Show("Periodo invalido!");
             }
-
         }
 
         private void GestorRestaurante_Load(object sender, EventArgs e)
@@ -197,7 +196,7 @@ namespace CU121.Interfaz
             todasCartas.Add(carta1); todasCartas.Add(carta2); todasCartas.Add(carta3); todasCartas.Add(carta4); todasCartas.Add(carta5);
         }
 
-        private void btnBuscarSubCategorias_Click(object sender, EventArgs e)
+        private void btnMostrarSubCategorias_Click(object sender, EventArgs e)
         {
             categoriasSeleccionadas = new BindingList<IEstructuraCarta>();
 
@@ -207,24 +206,13 @@ namespace CU121.Interfaz
                 categoriasSeleccionadas.Add(categoriaSel);
             }
 
-            //dgvSubCategorias.DataSource = gestor.obtenerHijos(categoriasSeleccionadas);
+            dgvSubCategorias.DataSource = gestor.buscarSubCategorias(categoriasSeleccionadas);
             btnMostrarProductos.Enabled = true;
         }
 
         private void btnMostrarProductos_Click(object sender, EventArgs e)
         {
-            SubcategoriasSeleccionadas = new BindingList<EstructuraCarta>();
 
-            foreach (DataGridViewRow row in dgvSubCategorias.SelectedRows)
-            {
-                EstructuraCarta subCategoriaSel = row.DataBoundItem as EstructuraCarta;
-                SubcategoriasSeleccionadas.Add(subCategoriaSel);
-            }
-            BindingList<EstructuraCarta> prodCarta = new BindingList<EstructuraCarta>();
-            //prodCarta= gestor.obtenerHijos(SubcategoriasSeleccionadas);
-
-            dgvProductos.DataSource = prodCarta;
-            btnGenerar.Enabled = true;
         }
 
         private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -234,26 +222,7 @@ namespace CU121.Interfaz
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Desea generar un informe?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                FormaVisualizacion formVis = new FormaVisualizacion();
 
-                foreach (DataGridViewRow row in dgvProductos.SelectedRows)
-                {
-                    EstructuraCarta prodSeleccionados = row.DataBoundItem as EstructuraCarta;
-                    PrductosSeleccionados.Add(prodSeleccionados);
-                }
-
-                //String datos = gestor.buscarPedidosConProductos(dtpFechaDesde.Value, dtpFechaHasta.Value, PrductosSeleccionados, todosPedidos, todosDetalles);
-
-                formVis.Show();
-            }
-        }
-
-        private void btnOrdenarCate_Click(object sender, EventArgs e)
-        {
-            dgvCategorias.Sort(dgvCategorias.Columns["ColumnaCategorias"], ListSortDirection.Descending);
         }
     }
 }

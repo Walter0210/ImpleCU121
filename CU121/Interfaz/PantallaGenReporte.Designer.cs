@@ -38,7 +38,6 @@
             this.btbBuscarCartas = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.grpCategorias = new System.Windows.Forms.GroupBox();
-            this.btnOrdenarCate = new System.Windows.Forms.Button();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.ColumnaCategorias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMostrarProductos = new System.Windows.Forms.Button();
@@ -116,7 +115,7 @@
             this.btnBuscarSubCategorias.TabIndex = 5;
             this.btnBuscarSubCategorias.Text = "Buscar SubCategorias";
             this.btnBuscarSubCategorias.UseVisualStyleBackColor = true;
-            this.btnBuscarSubCategorias.Click += new System.EventHandler(this.btnBuscarSubCategorias_Click);
+            this.btnBuscarSubCategorias.Click += new System.EventHandler(this.btnMostrarSubCategorias_Click);
             // 
             // btbBuscarCartas
             // 
@@ -141,7 +140,6 @@
             // 
             // grpCategorias
             // 
-            this.grpCategorias.Controls.Add(this.btnOrdenarCate);
             this.grpCategorias.Controls.Add(this.dgvCategorias);
             this.grpCategorias.Controls.Add(this.btnBuscarSubCategorias);
             this.grpCategorias.Location = new System.Drawing.Point(12, 159);
@@ -150,16 +148,6 @@
             this.grpCategorias.TabIndex = 8;
             this.grpCategorias.TabStop = false;
             this.grpCategorias.Text = "Categorías";
-            // 
-            // btnOrdenarCate
-            // 
-            this.btnOrdenarCate.Location = new System.Drawing.Point(121, 187);
-            this.btnOrdenarCate.Name = "btnOrdenarCate";
-            this.btnOrdenarCate.Size = new System.Drawing.Size(75, 23);
-            this.btnOrdenarCate.TabIndex = 7;
-            this.btnOrdenarCate.Text = "Ordenar";
-            this.btnOrdenarCate.UseVisualStyleBackColor = true;
-            this.btnOrdenarCate.Click += new System.EventHandler(this.btnOrdenarCate_Click);
             // 
             // dgvCategorias
             // 
@@ -173,7 +161,7 @@
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorias.Size = new System.Drawing.Size(203, 148);
+            this.dgvCategorias.Size = new System.Drawing.Size(203, 192);
             this.dgvCategorias.StandardTab = true;
             this.dgvCategorias.TabIndex = 6;
             this.dgvCategorias.Text = "dataGridView1";
@@ -319,7 +307,6 @@
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaSubCate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaProductos;
-        private System.Windows.Forms.Button btnOrdenarCate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCategorias;
     }
 }
