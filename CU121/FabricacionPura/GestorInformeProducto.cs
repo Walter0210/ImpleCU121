@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CU121.Dominio;
+using System;
 using System.Collections.Generic;
 
 namespace CU121.FabricacionPura
@@ -35,6 +36,35 @@ namespace CU121.FabricacionPura
                     }                }
             }
             return hijos;
+        }
+
+        public String buscarPedidosConProductos(DateTime inicio, DateTime fin, List<EstructuraCarta> productosSelec, List<Pedido> todosLosPedidos, List<DetallePedido> todosLosDetalles)
+        {
+            List<Pedido> pedidosVigentes = new List<Pedido>();
+            string respuesta = "";
+            foreach (Pedido pedidoVigente in todosLosPedidos)
+            {
+                if (pedidoVigente.FechaHoraPedido < fin)
+                {
+                    pedidosVigentes.Add(pedidoVigente);
+                }
+            }
+
+            List<DetallePedido> detallesBuscar = new List<DetallePedido>();
+            foreach (Pedido pedido in pedidosVigentes)
+            {
+                detallesBuscar.Add(pedido.DetallePedido);
+            }
+
+            foreach (DetallePedido detalle in detallesBuscar)
+            {
+                if (productosSelec.Contains(detalle.Producto))
+                {
+                    respuesta += detalle.Producto.Nombre + "  " + detalle.Cantidad;
+                    respuesta += '\t';
+                }
+            }
+            return respuesta;
         }
     }
 }

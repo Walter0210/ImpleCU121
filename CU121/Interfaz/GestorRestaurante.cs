@@ -14,7 +14,11 @@ namespace CU121.Interfaz
         private List<EstructuraCarta> cartasVigentes;
         private List<EstructuraCarta> categoriasSeleccionadas;
         private List<EstructuraCarta> SubcategoriasSeleccionadas;
+        private List<EstructuraCarta> PrductosSeleccionados;
         private bool seleccionoAlguna = false;
+
+        private List<Pedido> todosPedidos;
+        private List<DetallePedido> todosDetalles;
 
 
         public GestorRestaurante()
@@ -53,32 +57,6 @@ namespace CU121.Interfaz
             gestor = new GestorInformeProducto();
             todasCartas = new List<EstructuraCarta>();
 
-            //hay que armar todos los objetos de carta y producto.
-            //Productos
-            //Producto producto1 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Costeleta", 200);
-            //Producto producto2 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Bife", 200);
-            //Producto producto3 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Salmon", 200);
-            //Producto producto4 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Pollo asado", 200);
-            //Producto producto5 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Espageti", 200);
-            //Producto producto6 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Tallarines", 200);
-            //Producto producto7 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Ñoquis", 200);
-            //Producto producto8 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Moñitos", 200);
-            //Producto producto9 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Ravioles", 200);
-            //Producto producto10 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Canelones", 200);
-            //Producto producto11 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Agua", 200);
-            //Producto producto12 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Gaseosa 500ml", 200);
-            //Producto producto13 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Vino", 200);
-            //Producto producto14 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Cerveza", 200);
-            //Producto producto15 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Tiramisu", 200);
-            //Producto producto16 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Chocotorta", 200);
-            //Producto producto17 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Escoses", 200);
-            //Producto producto18 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Americano", 200);
-            //Producto producto19 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Milanesa con ensalada", 200);
-            //Producto producto20 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Bife Pollo con pure", 200);
-            //Producto producto21 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Hamburguesas de garvenzos con pure", 200);
-            //Producto producto22 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Ensalada gohun", 200);
-            //Producto producto23 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Hamburgesa", 200);
-            //Producto producto24 = new Producto(Convert.ToDateTime("10/11/2020"), 1, "Pizza", 200);
 
 
 
@@ -110,7 +88,28 @@ namespace CU121.Interfaz
             EstructuraCarta producto23 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Hamburgesa", null);
             EstructuraCarta producto24 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Pizza", null);
 
+            DetallePedido detallePedido1 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, producto1);
+            DetallePedido detallePedido2 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, producto2);
+            DetallePedido detallePedido3 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, producto3);
+            DetallePedido detallePedido4 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, producto4);
+            DetallePedido detallePedido5 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, producto5);
 
+            Pedido pedido = new Pedido(1, Convert.ToDateTime("10/11/2020"), 1, detallePedido1);
+            Pedido pedido2 = new Pedido(2, Convert.ToDateTime("10/11/2020"), 1, detallePedido2);
+            Pedido pedido3 = new Pedido(3, Convert.ToDateTime("10/11/2020"), 1, detallePedido3);
+            Pedido pedido4 = new Pedido(4, Convert.ToDateTime("10/11/2020"), 1, detallePedido4);
+            Pedido pedido5 = new Pedido(5, Convert.ToDateTime("10/11/2020"), 1, detallePedido5);
+
+            todosDetalles = new List<DetallePedido>();
+            todosPedidos = new List<Pedido>();
+
+            todosDetalles.Add(detallePedido1); todosDetalles.Add(detallePedido2);
+            todosDetalles.Add(detallePedido3); todosDetalles.Add(detallePedido4);
+            todosDetalles.Add(detallePedido5);
+
+            todosPedidos.Add(pedido); todosPedidos.Add(pedido2);
+            todosPedidos.Add(pedido3); todosPedidos.Add(pedido4);
+            todosPedidos.Add(pedido5);
             //Conjuntos de productos
 
 
@@ -243,10 +242,19 @@ namespace CU121.Interfaz
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Generar???", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("¿Desea generar un informe?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 FormaVisualizacion formVis = new FormaVisualizacion();
+
+                foreach (DataGridViewRow row in dgvProductos.SelectedRows)
+                {
+                    EstructuraCarta prodSeleccionados = row.DataBoundItem as EstructuraCarta;
+                    PrductosSeleccionados.Add(prodSeleccionados);
+                }
+
+                //String datos = gestor.buscarPedidosConProductos(dtpFechaDesde.Value, dtpFechaHasta.Value, PrductosSeleccionados, todosPedidos, todosDetalles);
+
                 formVis.Show();
             }
         }
