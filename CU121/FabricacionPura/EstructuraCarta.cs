@@ -7,7 +7,7 @@ namespace CU121.FabricacionPura
     class EstructuraCarta : IEstructuraCarta
     {
         private string comentario;
-        private List<EstructuraCarta> componentes;
+        private List<IEstructuraCarta> componentes;
         private bool esFavorito;
         private DateTime fechaCreacion;
         private DateTime fechaFinVigencia;
@@ -35,13 +35,13 @@ namespace CU121.FabricacionPura
             this.nombre = nombre;
         }
 
-        public EstructuraCarta(List<EstructuraCarta> componentes, string nombre)
+        public EstructuraCarta(List<IEstructuraCarta> componentes, string nombre)
         {
             this.componentes = componentes;
             this.nombre = nombre;
         }
 
-        public EstructuraCarta(string comentario, bool esFavorito, List<EstructuraCarta> componentes, DateTime fechaCreacion, DateTime fechaFinVigencia, DateTime fechaInicioVigencia, string nombre, float precio, Producto producto, string responsableCreacion)
+        public EstructuraCarta(string comentario, bool esFavorito, List<IEstructuraCarta> componentes, DateTime fechaCreacion, DateTime fechaFinVigencia, DateTime fechaInicioVigencia, string nombre, float precio, Producto producto, string responsableCreacion)
         {
             Comentario = comentario;
             EsFavorito = esFavorito;
@@ -109,15 +109,33 @@ namespace CU121.FabricacionPura
             set => responsableCreacion = value;
         }
 
-        public List<EstructuraCarta> Componentes
+        public List<IEstructuraCarta> Componentes
         {
             get => componentes;
             set => componentes = value;
         }
 
+        public void agregarHijo(IEstructuraCarta interfazEstructuraCarta)
+        {
+            throw new NotImplementedException();
+        }
 
+        public void eliminarHijo(IEstructuraCarta interfazEstructuraCarta)
+        {
+            throw new NotImplementedException();
+        }
 
-        public List<EstructuraCarta> obtenerHijo()
+        public string getNombre()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string getNombreProducto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<IEstructuraCarta> obtenerHijo()
         {
             return this.componentes;
         }

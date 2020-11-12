@@ -15,7 +15,7 @@ namespace CU121
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Interfaz.GestorRestaurante());
+            Application.Run(new Interfaz.PantallaGenReporte());
         }
     }
 }

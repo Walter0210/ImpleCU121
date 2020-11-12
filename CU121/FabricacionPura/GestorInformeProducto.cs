@@ -1,14 +1,20 @@
 ﻿using CU121.Dominio;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CU121.FabricacionPura
 {
     class GestorInformeProducto
     {
-        public List<EstructuraCarta> buscarCartasVigentes(DateTime desde, DateTime hasta, List<EstructuraCarta> cartasTodas)
+        private BindingList<IEstructuraCarta> cartasVigentes;
+        private BindingList<IEstructuraCarta> categoriasVigentes;
+        //private BindingList<IEstructuraCarta> subcategoriasVigentes;
+
+
+        public void buscarCartasVigentes(DateTime desde, DateTime hasta, List<EstructuraCarta> cartasTodas)
         {
-            List<EstructuraCarta> cartasVigentes = new List<EstructuraCarta>();
+            cartasVigentes = new BindingList<IEstructuraCarta>();
 
             foreach (EstructuraCarta carta in cartasTodas)
             {
@@ -17,26 +23,52 @@ namespace CU121.FabricacionPura
                     cartasVigentes.Add(carta);
                 }
             }
-            return cartasVigentes;
         }
 
-        public List<EstructuraCarta> obtenerHijos(List<EstructuraCarta> padres)
+        public List<IEstructuraCarta> buscarCategorias()
         {
-            List<EstructuraCarta> hijos = new List<EstructuraCarta>();
-
-
-            foreach (EstructuraCarta listaHijos in padres)
+            List<IEstructuraCarta> categoriasCarta = new List<IEstructuraCarta>();
+            foreach (EstructuraCarta carta in cartasVigentes)
             {
-                List<EstructuraCarta> aux = listaHijos.obtenerHijo();
-                foreach (EstructuraCarta hijo in aux)
+                List<IEstructuraCarta> cates = carta.obtenerHijo();
+                foreach (EstructuraCarta categoria in cates)
                 {
-                    if (!hijos.Contains(hijo))
-                    {
-                        hijos.Add(hijo);
-                    }                }
+                    categoriasCarta.Add(categoria);
+                }
             }
-            return hijos;
+            return categoriasCarta; 
         }
+
+        public List<IEstructuraCarta> buscarSubCategorias(BindingList<IEstructuraCarta> categoriasSeleccionadas)
+        {
+            List<IEstructuraCarta> subCategoriasCarta = new List<IEstructuraCarta>();
+            foreach (EstructuraCarta categoria in categoriasSeleccionadas)
+            {
+                List<IEstructuraCarta> subCates = categoria.obtenerHijo();
+                foreach (EstructuraCarta subcategoria in subCates)
+                {
+                    subCategoriasCarta.Add(categoria);
+                }
+            }
+            return subCategoriasCarta;
+        }
+
+        //public BindingList<EstructuraCarta> obtenerHijos(BindingList<EstructuraCarta> padres)
+        //{
+        //    BindingList<EstructuraCarta> hijos = new BindingList<EstructuraCarta>();
+
+        //    foreach (EstructuraCarta listaHijos in padres)
+        //    {
+        //        List<EstructuraCarta> aux = listaHijos.obtenerHijo();
+        //        foreach (EstructuraCarta hijo in aux)
+        //        {
+        //            if (!hijos.Contains(hijo))
+        //            {
+        //                hijos.Add(hijo);
+        //            }                }
+        //    }
+        //    return hijos;
+        //}
 
         public String buscarPedidosConProductos(DateTime inicio, DateTime fin, List<EstructuraCarta> productosSelec, List<Pedido> todosLosPedidos, List<DetallePedido> todosLosDetalles)
         {

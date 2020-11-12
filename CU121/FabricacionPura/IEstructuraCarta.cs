@@ -1,30 +1,18 @@
-﻿namespace CU121.Dominio
+﻿using System.Collections.Generic;
+
+namespace CU121.Dominio
 {
     interface IEstructuraCarta
     {
-        void agregarHijo(IEstructuraCarta interfazEstructuraCarta)
-        {
+        void agregarHijo(IEstructuraCarta interfazEstructuraCarta);
 
-        }
+        void eliminarHijo(IEstructuraCarta interfazEstructuraCarta);
 
-        void eliminarHijo(IEstructuraCarta interfazEstructuraCarta)
-        {
 
-        }
+        string getNombre();
 
-        void getNombre()
-        {
+        string getNombreProducto();
 
-        }
-
-        public void getNombreProducto()
-        {
-
-        }
-
-        public void obtenerHijo()
-        {
-
-        }
+        List<IEstructuraCarta> obtenerHijo();
     }
 }

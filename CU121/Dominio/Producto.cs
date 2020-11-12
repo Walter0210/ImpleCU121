@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CU121.Dominio
 {
@@ -40,6 +41,31 @@ namespace CU121.Dominio
         {
             get => precio;
             set => precio = value;
+        }
+
+        public void agregarHijo(IEstructuraCarta interfazEstructuraCarta)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void eliminarHijo(IEstructuraCarta interfazEstructuraCarta)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string getNombre()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string getNombreProducto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<IEstructuraCarta> obtenerHijo()
+        {
+            throw new NotImplementedException();
         }
     }
 }

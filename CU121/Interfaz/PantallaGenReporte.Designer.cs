@@ -1,6 +1,6 @@
 ﻿namespace CU121.Interfaz
 {
-    partial class GestorRestaurante
+    partial class PantallaGenReporte
     {
         /// <summary>
         /// Required designer variable.
@@ -38,8 +38,9 @@
             this.btbBuscarCartas = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.grpCategorias = new System.Windows.Forms.GroupBox();
+            this.btnOrdenarCate = new System.Windows.Forms.Button();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCategorias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMostrarProductos = new System.Windows.Forms.Button();
             this.grpSubCategorias = new System.Windows.Forms.GroupBox();
             this.dgvSubCategorias = new System.Windows.Forms.DataGridView();
@@ -140,6 +141,7 @@
             // 
             // grpCategorias
             // 
+            this.grpCategorias.Controls.Add(this.btnOrdenarCate);
             this.grpCategorias.Controls.Add(this.dgvCategorias);
             this.grpCategorias.Controls.Add(this.btnBuscarSubCategorias);
             this.grpCategorias.Location = new System.Drawing.Point(12, 159);
@@ -149,33 +151,42 @@
             this.grpCategorias.TabStop = false;
             this.grpCategorias.Text = "Categorías";
             // 
+            // btnOrdenarCate
+            // 
+            this.btnOrdenarCate.Location = new System.Drawing.Point(121, 187);
+            this.btnOrdenarCate.Name = "btnOrdenarCate";
+            this.btnOrdenarCate.Size = new System.Drawing.Size(75, 23);
+            this.btnOrdenarCate.TabIndex = 7;
+            this.btnOrdenarCate.Text = "Ordenar";
+            this.btnOrdenarCate.UseVisualStyleBackColor = true;
+            this.btnOrdenarCate.Click += new System.EventHandler(this.btnOrdenarCate_Click);
+            // 
             // dgvCategorias
             // 
             this.dgvCategorias.AllowUserToAddRows = false;
             this.dgvCategorias.AllowUserToDeleteRows = false;
-            this.dgvCategorias.AllowUserToOrderColumns = true;
             this.dgvCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
+            this.ColumnaCategorias});
             this.dgvCategorias.Location = new System.Drawing.Point(6, 22);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorias.Size = new System.Drawing.Size(203, 192);
+            this.dgvCategorias.Size = new System.Drawing.Size(203, 148);
             this.dgvCategorias.StandardTab = true;
             this.dgvCategorias.TabIndex = 6;
             this.dgvCategorias.Text = "dataGridView1";
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick);
             this.dgvCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick);
             // 
-            // Column1
+            // ColumnaCategorias
             // 
-            this.Column1.DataPropertyName = "nombre";
-            this.Column1.HeaderText = "Nombre Carta";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnaCategorias.DataPropertyName = "nombre";
+            this.ColumnaCategorias.HeaderText = "Nombre Carta";
+            this.ColumnaCategorias.Name = "ColumnaCategorias";
+            this.ColumnaCategorias.ReadOnly = true;
+            this.ColumnaCategorias.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // btnMostrarProductos
             // 
@@ -254,7 +265,7 @@
             this.ColumnaProductos.Name = "ColumnaProductos";
             this.ColumnaProductos.ReadOnly = true;
             // 
-            // GestorRestaurante
+            // PantallaGenReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -273,7 +284,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "GestorRestaurante";
+            this.Name = "PantallaGenReporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestorRestaurante";
             this.Load += new System.EventHandler(this.GestorRestaurante_Load);
@@ -308,6 +319,7 @@
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaSubCate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Button btnOrdenarCate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCategorias;
     }
 }

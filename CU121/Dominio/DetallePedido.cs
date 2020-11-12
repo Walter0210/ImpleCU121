@@ -23,7 +23,7 @@ namespace CU121.Dominio
             this.cantidad = cantidad;
             this.hora = hora;
             this.precio = precio;
-            this.prodcto = prodcto;
+            this.prodcto = producto;
         }
 
         public int Cantidad

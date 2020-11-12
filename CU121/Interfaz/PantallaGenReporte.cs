@@ -2,26 +2,29 @@
 using CU121.FabricacionPura;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace CU121.Interfaz
 {
-    public partial class GestorRestaurante : Form
+    public partial class PantallaGenReporte : Form
 
     {
         private GestorInformeProducto gestor;
         private List<EstructuraCarta> todasCartas;
-        private List<EstructuraCarta> cartasVigentes;
-        private List<EstructuraCarta> categoriasSeleccionadas;
-        private List<EstructuraCarta> SubcategoriasSeleccionadas;
-        private List<EstructuraCarta> PrductosSeleccionados;
-        private bool seleccionoAlguna = false;
-
         private List<Pedido> todosPedidos;
         private List<DetallePedido> todosDetalles;
 
+        private BindingList<EstructuraCarta> cartasVigentes;
+        private BindingList<IEstructuraCarta> categoriasSeleccionadas;
+        private BindingList<EstructuraCarta> SubcategoriasSeleccionadas;
+        private BindingList<EstructuraCarta> PrductosSeleccionados;
+        private bool seleccionoAlguna = false;
 
-        public GestorRestaurante()
+
+
+
+        public PantallaGenReporte()
         {
             InitializeComponent();
         }
@@ -33,8 +36,8 @@ namespace CU121.Interfaz
 
             if (fechaFin > fechaInicio)
             {
-                cartasVigentes = gestor.buscarCartasVigentes(fechaInicio, fechaFin, todasCartas);
-                dgvCategorias.DataSource = gestor.obtenerHijos(cartasVigentes);
+                gestor.buscarCartasVigentes(fechaInicio, fechaFin, todasCartas);
+                dgvCategorias.DataSource = gestor.buscarCategorias();
                 btnBuscarSubCategorias.Enabled = true;
             }
             else
@@ -113,18 +116,18 @@ namespace CU121.Interfaz
             //Conjuntos de productos
 
 
-            List<EstructuraCarta> pc1 = new List<EstructuraCarta>();
-            List<EstructuraCarta> pc2 = new List<EstructuraCarta>();
-            List<EstructuraCarta> pp1 = new List<EstructuraCarta>();
-            List<EstructuraCarta> pp2 = new List<EstructuraCarta>();
-            List<EstructuraCarta> pp3 = new List<EstructuraCarta>();
-            List<EstructuraCarta> pb1 = new List<EstructuraCarta>();
-            List<EstructuraCarta> pb2 = new List<EstructuraCarta>();
-            List<EstructuraCarta> ppo1 = new List<EstructuraCarta>();
-            List<EstructuraCarta> ppo2 = new List<EstructuraCarta>();
-            List<EstructuraCarta> pm1 = new List<EstructuraCarta>();
-            List<EstructuraCarta> pm2 = new List<EstructuraCarta>();
-            List<EstructuraCarta> pm3 = new List<EstructuraCarta>();
+            List<IEstructuraCarta> pc1 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> pc2 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> pp1 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> pp2 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> pp3 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> pb1 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> pb2 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> ppo1 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> ppo2 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> pm1 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> pm2 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> pm3 = new List<IEstructuraCarta>();
 
             pc1.Add(producto1); pc1.Add(producto2);
             pc2.Add(producto3); pc2.Add(producto4);
@@ -154,11 +157,11 @@ namespace CU121.Interfaz
             EstructuraCarta subcategoriaMenus3 = new EstructuraCarta(pm3, "Infantil");
 
             //Conjunto de subcategorias
-            List<EstructuraCarta> sc = new List<EstructuraCarta>();
-            List<EstructuraCarta> sp = new List<EstructuraCarta>();
-            List<EstructuraCarta> sb = new List<EstructuraCarta>();
-            List<EstructuraCarta> spo = new List<EstructuraCarta>();
-            List<EstructuraCarta> sm = new List<EstructuraCarta>();
+            List<IEstructuraCarta> sc = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> sp = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> sb = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> spo = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> sm = new List<IEstructuraCarta>();
             sc.Add(subcategoriaCarnes1); sc.Add(subcategoriaCarnes2);
             sp.Add(subcategoriaPastas1); sp.Add(subcategoriaPastas2); sp.Add(subcategoriaPastas3);
             sb.Add(subcategoriaBebidas1); sb.Add(subcategoriaBebidas2);
@@ -176,9 +179,9 @@ namespace CU121.Interfaz
 
 
             //Conjunto de categorias
-            List<EstructuraCarta> c1 = new List<EstructuraCarta>();
-            List<EstructuraCarta> c2 = new List<EstructuraCarta>();
-            List<EstructuraCarta> c3 = new List<EstructuraCarta>();
+            List<IEstructuraCarta> c1 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> c2 = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> c3 = new List<IEstructuraCarta>();
 
             c2.Add(categoriaCarnes); c2.Add(categoriaBebidas);
             c1.Add(categoriaCarnes); c1.Add(categoriaMenus); c1.Add(categoriaPastas);
@@ -196,42 +199,31 @@ namespace CU121.Interfaz
 
         private void btnBuscarSubCategorias_Click(object sender, EventArgs e)
         {
-            categoriasSeleccionadas = new List<EstructuraCarta>();
+            categoriasSeleccionadas = new BindingList<IEstructuraCarta>();
 
-            if (seleccionoAlguna)
+            foreach (DataGridViewRow row in this.dgvCategorias.SelectedRows)
             {
-                foreach (DataGridViewRow row in this.dgvCategorias.SelectedRows)
-                {
-                    EstructuraCarta categoriaSel = row.DataBoundItem as EstructuraCarta;
-                    categoriasSeleccionadas.Add(categoriaSel);
-                }  
-            }
-            else
-            {
-                foreach (DataGridViewRow row in dgvCategorias.Rows)
-                {
-                    EstructuraCarta categoriaSel = row.DataBoundItem as EstructuraCarta;
-                    categoriasSeleccionadas.Add(categoriaSel);
-                }
+                EstructuraCarta categoriaSel = row.DataBoundItem as EstructuraCarta;
+                categoriasSeleccionadas.Add(categoriaSel);
             }
 
-            dgvSubCategorias.DataSource = gestor.obtenerHijos(categoriasSeleccionadas);
+            //dgvSubCategorias.DataSource = gestor.obtenerHijos(categoriasSeleccionadas);
             btnMostrarProductos.Enabled = true;
         }
 
         private void btnMostrarProductos_Click(object sender, EventArgs e)
         {
-            SubcategoriasSeleccionadas = new List<EstructuraCarta>();
+            SubcategoriasSeleccionadas = new BindingList<EstructuraCarta>();
+
             foreach (DataGridViewRow row in dgvSubCategorias.SelectedRows)
             {
                 EstructuraCarta subCategoriaSel = row.DataBoundItem as EstructuraCarta;
                 SubcategoriasSeleccionadas.Add(subCategoriaSel);
             }
-            List<EstructuraCarta> prodCarta = new List<EstructuraCarta>();
-            prodCarta= gestor.obtenerHijos(SubcategoriasSeleccionadas);
+            BindingList<EstructuraCarta> prodCarta = new BindingList<EstructuraCarta>();
+            //prodCarta= gestor.obtenerHijos(SubcategoriasSeleccionadas);
 
             dgvProductos.DataSource = prodCarta;
-
             btnGenerar.Enabled = true;
         }
 
@@ -257,6 +249,11 @@ namespace CU121.Interfaz
 
                 formVis.Show();
             }
+        }
+
+        private void btnOrdenarCate_Click(object sender, EventArgs e)
+        {
+            dgvCategorias.Sort(dgvCategorias.Columns["ColumnaCategorias"], ListSortDirection.Descending);
         }
     }
 }

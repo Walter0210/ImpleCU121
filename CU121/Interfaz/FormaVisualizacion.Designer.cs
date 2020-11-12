@@ -84,7 +84,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormaVisualizacion";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccione Forma Visualizacion";
             this.Load += new System.EventHandler(this.FormaVisualizacion_Load);
             this.ResumeLayout(false);
