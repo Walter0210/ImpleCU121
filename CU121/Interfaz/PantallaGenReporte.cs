@@ -15,15 +15,6 @@ namespace CU121.Interfaz
         private List<Pedido> todosPedidos;
         private List<DetallePedido> todosDetalles;
 
-        private BindingList<EstructuraCarta> cartasVigentes;
-        private BindingList<IEstructuraCarta> categoriasSeleccionadas;
-        private BindingList<EstructuraCarta> SubcategoriasSeleccionadas;
-        private BindingList<EstructuraCarta> PrductosSeleccionados;
-        private bool seleccionoAlguna = false;
-
-
-
-
         public PantallaGenReporte()
         {
             InitializeComponent();
@@ -42,7 +33,7 @@ namespace CU121.Interfaz
             }
             else
             {
-                MessageBox.Show("Periodo invalido!");
+                MessageBox.Show("Seleccione un periodo valido.");
             }
         }
 
@@ -198,7 +189,7 @@ namespace CU121.Interfaz
 
         private void btnMostrarSubCategorias_Click(object sender, EventArgs e)
         {
-            categoriasSeleccionadas = new BindingList<IEstructuraCarta>();
+            BindingList<IEstructuraCarta> categoriasSeleccionadas = new BindingList<IEstructuraCarta>();
 
             foreach (DataGridViewRow row in this.dgvCategorias.SelectedRows)
             {
@@ -213,22 +204,27 @@ namespace CU121.Interfaz
 
         private void btnMostrarProductos_Click(object sender, EventArgs e)
         {
+            BindingList<IEstructuraCarta> subCatSelec = new BindingList<IEstructuraCarta>();
+            foreach (DataGridViewRow row in this.dgvSubCategorias.SelectedRows)
+            {
+                EstructuraCarta subCategoriaSel = row.DataBoundItem as EstructuraCarta;
+                subCatSelec.Add(subCategoriaSel);
+            }
 
-        }
-
-        private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            seleccionoAlguna = true;
+            dgvProductos.DataSource = gestor.buscarProductos(subCatSelec);
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Estas seguro que queres generar el infore?", "MessageBox Title", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("¿Desea generar el Reporte?", "Confime la Acción", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 FormaVisualizacion fomvis = new FormaVisualizacion();
                 fomvis.Show();
+
+                //Generar el reporte aquí.
+
             }
         }
     }

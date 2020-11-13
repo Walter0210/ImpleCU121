@@ -25,16 +25,6 @@ namespace CU121.FabricacionPura
             this.producto = producto;
         }
 
-        public EstructuraCarta(Producto producto)
-        {
-            this.producto = producto;
-        }
-
-        public EstructuraCarta(string nombre)
-        {
-            this.nombre = nombre;
-        }
-
         public EstructuraCarta(List<IEstructuraCarta> componentes, string nombre)
         {
             this.componentes = componentes;

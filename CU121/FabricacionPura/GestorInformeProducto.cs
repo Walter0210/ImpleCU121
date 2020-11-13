@@ -8,8 +8,8 @@ namespace CU121.FabricacionPura
     class GestorInformeProducto
     {
         private BindingList<IEstructuraCarta> cartasVigentes;
-        private BindingList<IEstructuraCarta> categoriasVigentes;
-        //private BindingList<IEstructuraCarta> subcategoriasVigentes;
+        private BindingList<IEstructuraCarta> categoriasSeleccionadas;
+        private BindingList<IEstructuraCarta> subCategoriasSeleccionadas;
 
 
         public void buscarCartasVigentes(DateTime desde, DateTime hasta, List<EstructuraCarta> cartasTodas)
@@ -41,6 +41,7 @@ namespace CU121.FabricacionPura
 
         public List<IEstructuraCarta> buscarSubCategorias(BindingList<IEstructuraCarta> categoriasSeleccionadas)
         {
+            this.categoriasSeleccionadas = categoriasSeleccionadas;
             List<IEstructuraCarta> subCategoriasCarta = new List<IEstructuraCarta>();
             foreach (EstructuraCarta categoria in categoriasSeleccionadas)
             {
@@ -54,33 +55,20 @@ namespace CU121.FabricacionPura
             return subCategoriasCarta;
         }
 
-        public String buscarPedidosConProductos(DateTime inicio, DateTime fin, List<EstructuraCarta> productosSelec, List<Pedido> todosLosPedidos, List<DetallePedido> todosLosDetalles)
+        public List<IEstructuraCarta> buscarProductos(BindingList<IEstructuraCarta> subCateSeleccionadas)
         {
-            List<Pedido> pedidosVigentes = new List<Pedido>();
-            string respuesta = "";
-            foreach (Pedido pedidoVigente in todosLosPedidos)
+            this.subCategoriasSeleccionadas = subCateSeleccionadas;
+            List<IEstructuraCarta> productos = new List<IEstructuraCarta>();
+
+            foreach (EstructuraCarta subCat in subCateSeleccionadas)
             {
-                if (pedidoVigente.FechaHoraPedido < fin)
+                List<IEstructuraCarta> prodCarta = subCat.obtenerHijo();
+                foreach (EstructuraCarta prod in prodCarta)
                 {
-                    pedidosVigentes.Add(pedidoVigente);
+                    productos.Add(prod);
                 }
             }
-
-            List<DetallePedido> detallesBuscar = new List<DetallePedido>();
-            foreach (Pedido pedido in pedidosVigentes)
-            {
-                detallesBuscar.Add(pedido.DetallePedido);
-            }
-
-            foreach (DetallePedido detalle in detallesBuscar)
-            {
-                if (productosSelec.Contains(detalle.Producto))
-                {
-                    respuesta += detalle.Producto.Nombre + "  " + detalle.Cantidad;
-                    respuesta += '\t';
-                }
-            }
-            return respuesta;
+            return productos;
         }
     }
 }

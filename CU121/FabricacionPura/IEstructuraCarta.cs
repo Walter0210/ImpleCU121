@@ -8,7 +8,6 @@ namespace CU121.Dominio
 
         void eliminarHijo(IEstructuraCarta interfazEstructuraCarta);
 
-
         string getNombre();
 
         string getNombreProducto();
