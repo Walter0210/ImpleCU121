@@ -14,6 +14,8 @@ namespace CU121.Interfaz
         private List<EstructuraCarta> todasCartas;
         private List<Pedido> todosPedidos;
         private List<DetallePedido> todosDetalles;
+        private DateTime fechaInicio;
+        private DateTime fechaFin;
 
         public PantallaGenReporte()
         {
@@ -22,9 +24,8 @@ namespace CU121.Interfaz
 
         private void btbBuscarCartas_Click(object sender, EventArgs e)
         {
-            DateTime fechaInicio = dtpFechaDesde.Value;
-            DateTime fechaFin = dtpFechaHasta.Value;
-
+            fechaInicio = dtpFechaDesde.Value;
+            fechaFin = dtpFechaHasta.Value;
             if (fechaFin > fechaInicio)
             {
                 gestor.buscarCartasVigentes(fechaInicio, fechaFin, todasCartas);
@@ -223,6 +224,8 @@ namespace CU121.Interfaz
                 FormaVisualizacion fomvis = new FormaVisualizacion();
                 fomvis.Show();
 
+
+                gestor.buscarPedidosCumplenFiltros(fechaInicio, fechaFin, todosPedidos);
                 //Generar el reporte aquí.
 
             }

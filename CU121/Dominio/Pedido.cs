@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CU121.FabricacionPura;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -44,6 +45,24 @@ namespace CU121.Dominio
         {
             get => detalle;
             set => detalle = value;
+        }
+
+        public bool esValido(DateTime inicio, DateTime fin)
+        {
+            return (inicio <= fechaHoraPedido && fechaHoraPedido <= fin);
+        }
+
+        public List<string> tieneProductoDeCartaSeleccionado(List<IEstructuraCarta> prodDeCarta)
+        {
+            List<string> productos = new List<string>();
+            foreach (EstructuraCarta productoDeCarta in prodDeCarta)
+            {
+                if (this.detalle.contieneProdCarta(prodDeCarta))
+                {
+                    productos.Add(this.detalle.obtenerProducto());
+                }
+            }
+            return productos;
         }
     }
 }

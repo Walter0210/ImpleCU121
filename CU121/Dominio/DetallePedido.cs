@@ -11,7 +11,7 @@ namespace CU121.Dominio
         private int cantidad;
         private DateTime hora;
         private int precio;
-        private EstructuraCarta prodcto;
+        private EstructuraCarta productoDeCarta;
 
 
         public DetallePedido()
@@ -23,7 +23,7 @@ namespace CU121.Dominio
             this.cantidad = cantidad;
             this.hora = hora;
             this.precio = precio;
-            this.prodcto = producto;
+            this.productoDeCarta = producto;
         }
 
         public int Cantidad
@@ -46,9 +46,18 @@ namespace CU121.Dominio
 
         public EstructuraCarta Producto
         {
-            get => prodcto;
-            set => prodcto = value;
+            get => productoDeCarta;
+            set => productoDeCarta = value;
         }
 
+        public bool contieneProdCarta(List<IEstructuraCarta> prodDeCarta)
+        {
+            return prodDeCarta.Contains(this.productoDeCarta);
+        }
+
+        public string obtenerProducto()
+        {
+            return this.productoDeCarta.getNombreProducto();
+        }
     }
 }

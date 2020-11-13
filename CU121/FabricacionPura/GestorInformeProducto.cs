@@ -10,6 +10,7 @@ namespace CU121.FabricacionPura
         private BindingList<IEstructuraCarta> cartasVigentes;
         private BindingList<IEstructuraCarta> categoriasSeleccionadas;
         private BindingList<IEstructuraCarta> subCategoriasSeleccionadas;
+        private List<IEstructuraCarta> prodDeCarta;
 
 
         public void buscarCartasVigentes(DateTime desde, DateTime hasta, List<EstructuraCarta> cartasTodas)
@@ -58,17 +59,29 @@ namespace CU121.FabricacionPura
         public List<IEstructuraCarta> buscarProductos(BindingList<IEstructuraCarta> subCateSeleccionadas)
         {
             this.subCategoriasSeleccionadas = subCateSeleccionadas;
-            List<IEstructuraCarta> productos = new List<IEstructuraCarta>();
+            List<IEstructuraCarta> productosDeCarta = new List<IEstructuraCarta>();
 
             foreach (EstructuraCarta subCat in subCateSeleccionadas)
             {
                 List<IEstructuraCarta> prodCarta = subCat.obtenerHijo();
                 foreach (EstructuraCarta prod in prodCarta)
                 {
-                    productos.Add(prod);
+                    productosDeCarta.Add(prod);
                 }
             }
-            return productos;
+            this.prodDeCarta = productosDeCarta;
+            return productosDeCarta;
+        }
+
+        public void buscarPedidosCumplenFiltros(DateTime inicio, DateTime fin, List<Pedido> todosPedidos)
+        {
+            foreach (Pedido pedido in todosPedidos)
+            {
+                if (pedido.esValido(inicio, fin))
+                {
+
+                }
+            }
         }
     }
 }
