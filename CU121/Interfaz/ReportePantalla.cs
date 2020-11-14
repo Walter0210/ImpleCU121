@@ -10,7 +10,7 @@ namespace CU121.Interfaz
 {
     public partial class ReportePantalla : Form
     {
-        public ReportePantalla(PantallaGenReporte gest)
+        public ReportePantalla()
         {
             InitializeComponent();
         }
@@ -31,5 +31,9 @@ namespace CU121.Interfaz
             lblPie.Text = "El informe fue generado por Grupo 15 en la fecha" + now.ToString();
         }
 
+        private void ReportePantalla_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

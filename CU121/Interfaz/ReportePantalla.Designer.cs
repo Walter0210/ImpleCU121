@@ -37,10 +37,10 @@
             // lblEncabezado
             // 
             this.lblEncabezado.AutoSize = true;
-            this.lblEncabezado.Font = new System.Drawing.Font("Segoe UI", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.lblEncabezado.Location = new System.Drawing.Point(12, 9);
+            this.lblEncabezado.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblEncabezado.Location = new System.Drawing.Point(60, 43);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(501, 28);
+            this.lblEncabezado.Size = new System.Drawing.Size(328, 17);
             this.lblEncabezado.TabIndex = 0;
             this.lblEncabezado.Text = "Informe de Productos mas pedidos entre las fechas:";
             // 
@@ -48,7 +48,7 @@
             // 
             this.lblPie.AutoSize = true;
             this.lblPie.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblPie.Location = new System.Drawing.Point(13, 565);
+            this.lblPie.Location = new System.Drawing.Point(12, 658);
             this.lblPie.Name = "lblPie";
             this.lblPie.Size = new System.Drawing.Size(152, 15);
             this.lblPie.TabIndex = 1;
@@ -57,17 +57,16 @@
             // grdCuerpo
             // 
             this.grdCuerpo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCuerpo.Location = new System.Drawing.Point(47, 123);
+            this.grdCuerpo.Location = new System.Drawing.Point(12, 114);
             this.grdCuerpo.Name = "grdCuerpo";
-            this.grdCuerpo.RowTemplate.Height = 25;
-            this.grdCuerpo.Size = new System.Drawing.Size(723, 312);
+            this.grdCuerpo.Size = new System.Drawing.Size(596, 541);
             this.grdCuerpo.TabIndex = 2;
             // 
             // ReportePantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 592);
+            this.ClientSize = new System.Drawing.Size(620, 682);
             this.Controls.Add(this.grdCuerpo);
             this.Controls.Add(this.lblPie);
             this.Controls.Add(this.lblEncabezado);
@@ -76,6 +75,7 @@
             this.Name = "ReportePantalla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportePantalla";
+            this.Load += new System.EventHandler(this.ReportePantalla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdCuerpo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -79,7 +79,7 @@ namespace CU121.FabricacionPura
             {
                 if (pedido.esValido(inicio, fin))
                 {
-
+                    
                 }
             }
         }

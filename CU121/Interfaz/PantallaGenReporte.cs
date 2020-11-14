@@ -226,7 +226,7 @@ namespace CU121.Interfaz
 
 
                 gestor.buscarPedidosCumplenFiltros(fechaInicio, fechaFin, todosPedidos);
-                //Generar el reporte aquí.
+                
 
             }
         }
