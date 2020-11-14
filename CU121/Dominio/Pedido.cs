@@ -50,7 +50,7 @@ namespace CU121.Dominio
 
         public bool esValido(DateTime inicio, DateTime fin)
         {
-            return (inicio <= fechaHoraPedido && fechaHoraPedido <= fin);
+            return (fechaHoraPedido <= fin);
         }
 
         public DataTable buscarProdSubCatSeleccionados(List<IEstructuraCarta> prodDeCarta)
@@ -64,7 +64,7 @@ namespace CU121.Dominio
             List<string> productos = new List<string>();
 
             column = new DataColumn();
-            column.DataType = System.Type.GetType("System.string");
+            column.DataType = System.Type.GetType("System.String");
             column.ColumnName = "Producto";
             table.Columns.Add(column);
 

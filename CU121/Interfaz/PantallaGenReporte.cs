@@ -231,9 +231,8 @@ namespace CU121.Interfaz
                     EstructuraCarta prodCarta = row.DataBoundItem as EstructuraCarta;
                     prdCartaSeleccionados.Add(prodCarta);
                 }
+                
                 gestor.buscarPedidosCumplenFiltros(fechaInicio, fechaFin, todosPedidos, prdCartaSeleccionados);
-
-
             }
         }
     }
