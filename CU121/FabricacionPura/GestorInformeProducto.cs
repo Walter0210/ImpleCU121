@@ -107,7 +107,7 @@ namespace CU121.FabricacionPura
 
             column = new DataColumn();
             column.DataType = Type.GetType("System.Double");
-            column.ColumnName = "z";
+            column.ColumnName = "Total productoz";
             tablaReporte.Columns.Add(column);
 
             foreach (Pedido pedido in todosPedidos)
