@@ -1,6 +1,7 @@
 ﻿using CU121.FabricacionPura;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace CU121.Dominio
@@ -52,17 +53,39 @@ namespace CU121.Dominio
             return (inicio <= fechaHoraPedido && fechaHoraPedido <= fin);
         }
 
-        public List<string> tieneProductoDeCartaSeleccionado(List<IEstructuraCarta> prodDeCarta)
+        public DataTable buscarProdSubCatSeleccionados(List<IEstructuraCarta> prodDeCarta)
         {
+            // Create new DataTable and DataSource objects.
+            DataTable table = new DataTable();
+
+            // Declare DataColumn and DataRow variables.
+            DataColumn column;
+            DataRow row;
             List<string> productos = new List<string>();
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.string");
+            column.ColumnName = "Producto";
+            table.Columns.Add(column);
+
+            // Create second column.
+            column = new DataColumn();
+            column.DataType = Type.GetType("System.Int32");
+            column.ColumnName = "Cantidad";
+            table.Columns.Add(column);
+
             foreach (EstructuraCarta productoDeCarta in prodDeCarta)
             {
                 if (this.detalle.contieneProdCarta(prodDeCarta))
                 {
                     productos.Add(this.detalle.obtenerProducto());
+                    row = table.NewRow();
+                    row["Producto"] = this.detalle.obtenerProducto();
+                    row["Cantidad"] = this.detalle.getCantidad();
+                    table.Rows.Add(row);
                 }
             }
-            return productos;
+            return table;
         }
     }
 }

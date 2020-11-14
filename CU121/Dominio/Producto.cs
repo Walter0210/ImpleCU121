@@ -55,7 +55,7 @@ namespace CU121.Dominio
 
         public string getNombre()
         {
-            throw new NotImplementedException();
+            return this.nombre;
         }
 
         public string getNombreProducto()

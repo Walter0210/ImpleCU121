@@ -117,12 +117,12 @@ namespace CU121.FabricacionPura
 
         public string getNombre()
         {
-            throw new NotImplementedException();
+            return this.nombre;
         }
 
         public string getNombreProducto()
         {
-            throw new NotImplementedException();
+            return this.producto.getNombre();
         }
 
         public List<IEstructuraCarta> obtenerHijo()

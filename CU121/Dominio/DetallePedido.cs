@@ -26,28 +26,9 @@ namespace CU121.Dominio
             this.productoDeCarta = producto;
         }
 
-        public int Cantidad
-        {
-            get => cantidad;
-            set => cantidad = value;
-        }
-
-        public DateTime Hora
-        {
-            get => hora;
-            set => hora = value;
-        }
-
-        public int Precio
-        {
-            get => precio;
-            set => precio = value;
-        }
-
-        public EstructuraCarta Producto
-        {
-            get => productoDeCarta;
-            set => productoDeCarta = value;
+        public int getCantidad() {
+            return this.cantidad;
+        
         }
 
         public bool contieneProdCarta(List<IEstructuraCarta> prodDeCarta)

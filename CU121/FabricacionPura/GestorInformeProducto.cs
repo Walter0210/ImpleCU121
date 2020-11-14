@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 
 namespace CU121.FabricacionPura
 {
@@ -10,7 +11,9 @@ namespace CU121.FabricacionPura
         private BindingList<IEstructuraCarta> cartasVigentes;
         private BindingList<IEstructuraCarta> categoriasSeleccionadas;
         private BindingList<IEstructuraCarta> subCategoriasSeleccionadas;
-        private List<IEstructuraCarta> prodDeCarta;
+        private List<IEstructuraCarta> productosDeCartaSeleccionados;
+
+        private DataTable tablaReporte;
 
 
         public void buscarCartasVigentes(DateTime desde, DateTime hasta, List<EstructuraCarta> cartasTodas)
@@ -69,17 +72,17 @@ namespace CU121.FabricacionPura
                     productosDeCarta.Add(prod);
                 }
             }
-            this.prodDeCarta = productosDeCarta;
+            this.productosDeCartaSeleccionados = productosDeCarta;
             return productosDeCarta;
         }
 
-        public void buscarPedidosCumplenFiltros(DateTime inicio, DateTime fin, List<Pedido> todosPedidos)
+        public void buscarPedidosCumplenFiltros(DateTime inicio, DateTime fin, List<Pedido> todosPedidos, List<IEstructuraCarta> prodCartaSeleccionados)
         {
             foreach (Pedido pedido in todosPedidos)
             {
                 if (pedido.esValido(inicio, fin))
                 {
-                    
+                    tablaReporte = pedido.buscarProdSubCatSeleccionados(prodCartaSeleccionados);
                 }
             }
         }

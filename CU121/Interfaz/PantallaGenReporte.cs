@@ -225,8 +225,14 @@ namespace CU121.Interfaz
                 fomvis.Show();
 
 
-                gestor.buscarPedidosCumplenFiltros(fechaInicio, fechaFin, todosPedidos);
-                
+                List<IEstructuraCarta> prdCartaSeleccionados = new List<IEstructuraCarta>();
+                foreach (DataGridViewRow row in this.dgvProductos.SelectedRows)
+                {
+                    EstructuraCarta prodCarta = row.DataBoundItem as EstructuraCarta;
+                    prdCartaSeleccionados.Add(prodCarta);
+                }
+                gestor.buscarPedidosCumplenFiltros(fechaInicio, fechaFin, todosPedidos, prdCartaSeleccionados);
+
 
             }
         }
