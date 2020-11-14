@@ -28,22 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblEncabezado = new System.Windows.Forms.Label();
+            this.lblPie = new System.Windows.Forms.Label();
+            this.grdCuerpo = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCuerpo)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblEncabezado
+            // 
+            this.lblEncabezado.AutoSize = true;
+            this.lblEncabezado.Font = new System.Drawing.Font("Segoe UI", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblEncabezado.Location = new System.Drawing.Point(12, 9);
+            this.lblEncabezado.Name = "lblEncabezado";
+            this.lblEncabezado.Size = new System.Drawing.Size(501, 28);
+            this.lblEncabezado.TabIndex = 0;
+            this.lblEncabezado.Text = "Informe de Productos mas pedidos entre las fechas:";
+            // 
+            // lblPie
+            // 
+            this.lblPie.AutoSize = true;
+            this.lblPie.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblPie.Location = new System.Drawing.Point(13, 565);
+            this.lblPie.Name = "lblPie";
+            this.lblPie.Size = new System.Drawing.Size(152, 15);
+            this.lblPie.TabIndex = 1;
+            this.lblPie.Text = "El reporte fue generado por:";
+            // 
+            // grdCuerpo
+            // 
+            this.grdCuerpo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCuerpo.Location = new System.Drawing.Point(47, 123);
+            this.grdCuerpo.Name = "grdCuerpo";
+            this.grdCuerpo.RowTemplate.Height = 25;
+            this.grdCuerpo.Size = new System.Drawing.Size(723, 312);
+            this.grdCuerpo.TabIndex = 2;
             // 
             // ReportePantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 592);
+            this.ClientSize = new System.Drawing.Size(819, 592);
+            this.Controls.Add(this.grdCuerpo);
+            this.Controls.Add(this.lblPie);
+            this.Controls.Add(this.lblEncabezado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "ReportePantalla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportePantalla";
+            ((System.ComponentModel.ISupportInitialize)(this.grdCuerpo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblEncabezado;
+        private System.Windows.Forms.Label lblPie;
+        private System.Windows.Forms.DataGridView grdCuerpo;
     }
 }
