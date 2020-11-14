@@ -14,11 +14,19 @@ namespace CU121.FabricacionPura
         private BindingList<IEstructuraCarta> subCategoriasSeleccionadas;
         private List<IEstructuraCarta> productosDeCartaSeleccionados;
 
+        DateTime fechaInicio;
+        DateTime fechaFin;
+
         private DataTable tablaReporte;
 
+        private double totalCategoria;
+        private double totalSubCategoria;
+        
 
         public void buscarCartasVigentes(DateTime desde, DateTime hasta, List<EstructuraCarta> cartasTodas)
         {
+            fechaInicio = desde;
+            fechaFin = hasta;
             cartasVigentes = new BindingList<IEstructuraCarta>();
 
             foreach (EstructuraCarta carta in cartasTodas)
@@ -81,7 +89,7 @@ namespace CU121.FabricacionPura
             return productosDeCarta;
         }
 
-        public void buscarPedidosCumplenFiltros(DateTime inicio, DateTime fin, List<Pedido> todosPedidos, List<IEstructuraCarta> prodCartaSeleccionados)
+        public DataTable buscarPedidosCumplenFiltros(DateTime inicio, DateTime fin, List<Pedido> todosPedidos, List<IEstructuraCarta> prodCartaSeleccionados)
         {
             tablaReporte = new DataTable();
             DataColumn column;
@@ -99,16 +107,31 @@ namespace CU121.FabricacionPura
 
             column = new DataColumn();
             column.DataType = Type.GetType("System.Double");
-            column.ColumnName = "TotalxCantidad";
+            column.ColumnName = "z";
             tablaReporte.Columns.Add(column);
 
             foreach (Pedido pedido in todosPedidos)
             {
-                if (pedido.esValido(inicio, fin))
+                if (pedido.esValido(fechaInicio, fechaFin))
                 {
                     pedido.buscarProdSubCatSeleccionados(prodCartaSeleccionados, tablaReporte);
                 }
             }
+            return tablaReporte;
         }
+
+        public void contadores()
+        {
+            foreach (EstructuraCarta categoria in categoriasSeleccionadas)
+            {
+                foreach (EstructuraCarta subcategoria in subCategoriasSeleccionadas)
+                {
+
+                }
+            }
+        }
+
+
+
     }
 }

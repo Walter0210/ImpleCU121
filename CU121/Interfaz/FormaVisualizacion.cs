@@ -10,11 +10,18 @@ namespace CU121.Interfaz
 {
     public partial class FormaVisualizacion : Form
     {
-
+        private DataTable fuenteReporte;
         private List<string> formasvs;
-        public FormaVisualizacion()
+        DateTime inicio;
+        DateTime fin;
+
+
+        public FormaVisualizacion(DataTable fuente, DateTime i, DateTime f)
         {
             InitializeComponent();
+            fuenteReporte = fuente;
+            inicio = i;
+            fin = f;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -24,7 +31,6 @@ namespace CU121.Interfaz
 
         private void FormaVisualizacion_Load(object sender, EventArgs e)
         {
-
             formasvs = new List<string>();
             formasvs.Add("Pantalla");
             formasvs.Add("Impreso");
@@ -34,21 +40,13 @@ namespace CU121.Interfaz
             cboForma.DataSource = formasvs;
         }
 
-
-
-        private void cboForma_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
             switch (cboForma.SelectedValue)
             {
                 case "Pantalla":
-                    ReportePantalla reporte = new ReportePantalla();
+                    ReportePantalla reporte = new ReportePantalla(fuenteReporte, inicio, fin);
                     reporte.Show();
-                    //this.Dispose();
                     break;
                 case "Impreso":
                     MessageBox.Show("Esto es un Reporte Impreso");

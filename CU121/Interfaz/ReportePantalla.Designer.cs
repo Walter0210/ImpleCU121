@@ -56,9 +56,13 @@
             // 
             // grdCuerpo
             // 
+            this.grdCuerpo.AllowUserToAddRows = false;
+            this.grdCuerpo.AllowUserToDeleteRows = false;
+            this.grdCuerpo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdCuerpo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCuerpo.Location = new System.Drawing.Point(12, 114);
             this.grdCuerpo.Name = "grdCuerpo";
+            this.grdCuerpo.ReadOnly = true;
             this.grdCuerpo.Size = new System.Drawing.Size(596, 541);
             this.grdCuerpo.TabIndex = 2;
             // 

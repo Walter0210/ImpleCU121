@@ -10,14 +10,22 @@ namespace CU121.Interfaz
 {
     public partial class ReportePantalla : Form
     {
-        public ReportePantalla()
+        private DataTable tablaReporte;
+        DateTime i;
+        DateTime f;
+
+        public ReportePantalla(DataTable tabla, DateTime ini, DateTime fi)
         {
             InitializeComponent();
+            tablaReporte = tabla;
+            i = ini;
+            f = fi;
         }
 
         public void construirEncabezado(DateTime fechaInicio, DateTime fechaFin)
+
         {
-            lblEncabezado.Text = "Informe de Productos mas pedidos entre las fechas: " + fechaInicio.ToString() + " y " + fechaFin.ToString();
+            lblEncabezado.Text = "Informe de Productos mas pedidos para el periodo " + fechaInicio.ToString("MMMM dd") + " - " + fechaFin.ToString("MMMM dd");
         }
 
         public void construirCuerpo(DataTable datos)
@@ -33,7 +41,9 @@ namespace CU121.Interfaz
 
         private void ReportePantalla_Load(object sender, EventArgs e)
         {
-
+            construirEncabezado(i, f);
+            construirCuerpo(tablaReporte);
+            construirPie();
         }
     }
 }

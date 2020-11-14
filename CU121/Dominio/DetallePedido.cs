@@ -10,7 +10,7 @@ namespace CU121.Dominio
     {
         private int cantidad;
         private DateTime hora;
-        private int precio;
+        private Double precio;
         private EstructuraCarta productoDeCarta;
 
 
@@ -18,21 +18,22 @@ namespace CU121.Dominio
         {
 
         }
-        public DetallePedido(int cantidad, DateTime hora, int precio, EstructuraCarta producto)
+        public DetallePedido(int cantidad, DateTime hora, Double precio, EstructuraCarta producto)
         {
             this.cantidad = cantidad;
             this.hora = hora;
-            this.precio = precio;
             this.productoDeCarta = producto;
+            this.precio = this.cantidad * productoDeCarta.getPrecio();
+            
         }
 
         public int getCantidad() {
             return this.cantidad;
         }
 
-        public bool contieneProdCarta(List<IEstructuraCarta> prodDeCarta)
+        public bool contieneProdCarta(EstructuraCarta prodDeCarta)
         {
-            return prodDeCarta.Contains(this.productoDeCarta);
+            return prodDeCarta.Equals(this.productoDeCarta);
         }
 
         public string obtenerProducto()
@@ -42,7 +43,7 @@ namespace CU121.Dominio
 
         internal double totalProducto()
         {
-            return this.cantidad * this.productoDeCarta.getPrecio();
+            return precio;
         }
     }
 }

@@ -60,17 +60,17 @@ namespace CU121.Dominio
 
             foreach (EstructuraCarta productoDeCarta in prodDeCarta)
             {
-                if (this.detalle.contieneProdCarta(prodDeCarta))
+                if (this.detalle.contieneProdCarta(productoDeCarta))
                 {
-                    //productos.Add(this.detalle.obtenerProducto());
+              
                     row = tablaReporte.NewRow();
                     row["Producto"] = this.detalle.obtenerProducto();
                     row["Cantidad"] = this.detalle.getCantidad();
-                    row["TotalxCantidad"] = this.detalle.totalProducto();
+                    row["Total producto"] = this.detalle.totalProducto();
                     tablaReporte.Rows.Add(row);
                 }
             }
-            //return row;
+            
         }
     }
 }

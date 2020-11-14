@@ -134,5 +134,15 @@ namespace CU121.FabricacionPura
         {
             return this.producto.getPrecio();
         }
+
+        public int CompareTo(EstructuraCarta obj)
+        {
+            return string.Compare(nombre, obj.nombre);
+        }
+
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

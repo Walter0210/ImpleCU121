@@ -39,7 +39,7 @@
             this.btnGenerar = new System.Windows.Forms.Button();
             this.grpCategorias = new System.Windows.Forms.GroupBox();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
-            this.ColumnaCategorias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMostrarProductos = new System.Windows.Forms.Button();
             this.grpSubCategorias = new System.Windows.Forms.GroupBox();
             this.dgvSubCategorias = new System.Windows.Forms.DataGridView();
@@ -156,7 +156,7 @@
             this.dgvCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnaCategorias});
+            this.ColumnaCategoria});
             this.dgvCategorias.Location = new System.Drawing.Point(6, 22);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
@@ -166,13 +166,12 @@
             this.dgvCategorias.TabIndex = 6;
             this.dgvCategorias.Text = "dataGridView1";
             // 
-            // ColumnaCategorias
+            // ColumnaCategoria
             // 
-            this.ColumnaCategorias.DataPropertyName = "nombre";
-            this.ColumnaCategorias.HeaderText = "Nombre Carta";
-            this.ColumnaCategorias.Name = "ColumnaCategorias";
-            this.ColumnaCategorias.ReadOnly = true;
-            this.ColumnaCategorias.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColumnaCategoria.DataPropertyName = "nombre";
+            this.ColumnaCategoria.HeaderText = "Nombre cat.";
+            this.ColumnaCategoria.Name = "ColumnaCategoria";
+            this.ColumnaCategoria.ReadOnly = true;
             // 
             // btnMostrarProductos
             // 
@@ -305,6 +304,6 @@
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaSubCate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCategorias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCategoria;
     }
 }
