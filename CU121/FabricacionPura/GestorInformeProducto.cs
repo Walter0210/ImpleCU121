@@ -107,7 +107,7 @@ namespace CU121.FabricacionPura
 
             column = new DataColumn();
             column.DataType = Type.GetType("System.Double");
-            column.ColumnName = "Total productoz";
+            column.ColumnName = "Total producto";
             tablaReporte.Columns.Add(column);
 
             foreach (Pedido pedido in todosPedidos)
@@ -119,19 +119,5 @@ namespace CU121.FabricacionPura
             }
             return tablaReporte;
         }
-
-        public void contadores()
-        {
-            foreach (EstructuraCarta categoria in categoriasSeleccionadas)
-            {
-                foreach (EstructuraCarta subcategoria in subCategoriasSeleccionadas)
-                {
-
-                }
-            }
-        }
-
-
-
     }
 }

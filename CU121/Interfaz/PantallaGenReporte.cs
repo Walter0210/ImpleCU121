@@ -35,7 +35,7 @@ namespace CU121.Interfaz
                 dgvCategorias.SelectAll();
                 btnBuscarSubCategorias.Enabled = true;
 
-                //dgvCategorias.Sort(DataGridViewColumn.Nombre, ListSortDirection.Ascending);
+                //dgvCategorias.Sort(DataGridViewColumn("ColumnaProductos"), ListSortDirection.Ascending);
             }
             else
             {
@@ -209,11 +209,11 @@ namespace CU121.Interfaz
             c3.Add(categoriaMenus);     c3.Add(categoriaPostres);
 
             //Cartas
-            EstructuraCarta carta1 = new EstructuraCarta("carta1", true, c1, Convert.ToDateTime("1/11/2020"), Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("10/11/2021"), "primerCarta", 1.43f, null, "waltersito");
-            EstructuraCarta carta2 = new EstructuraCarta("carta2", true, c2, Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("10/11/2021"), "segundaCarta", 1.43f, null, "waltersito");
-            EstructuraCarta carta3 = new EstructuraCarta("carta3", true, c3, Convert.ToDateTime("8/11/2020"), Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("9/11/2021"), "tercerCarta", 1.43f, null, "lautarito");
-            EstructuraCarta carta4 = new EstructuraCarta("carta4", true, c2, Convert.ToDateTime("1/11/2020"), Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("9/11/2021"), "cuartaCarta", 1.43f, null, "lautarito");
-            EstructuraCarta carta5 = new EstructuraCarta("carta5", true, c3, Convert.ToDateTime("1/11/2020"), Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("1/11/2021"), "quintaCarta", 1.43f, null, "lautarito");
+            EstructuraCarta carta1 = new EstructuraCarta(Convert.ToDateTime("1/11/2020"), Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("10/11/2021"), "primerCarta", "waltersito");
+            EstructuraCarta carta2 = new EstructuraCarta(Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("10/11/2021"), "segundaCarta", "waltersito");
+            EstructuraCarta carta3 = new EstructuraCarta(Convert.ToDateTime("8/11/2020"), Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("9/11/2021"), "tercerCarta", "lautarito");
+            EstructuraCarta carta4 = new EstructuraCarta(Convert.ToDateTime("1/11/2020"), Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("9/11/2021"), "cuartaCarta", "lautarito");
+            EstructuraCarta carta5 = new EstructuraCarta(Convert.ToDateTime("1/11/2020"), Convert.ToDateTime("9/11/2020"), Convert.ToDateTime("1/11/2021"), "quintaCarta", "lautarito");
 
             todasCartas.Add(carta1); todasCartas.Add(carta2); todasCartas.Add(carta3); todasCartas.Add(carta4); todasCartas.Add(carta5);
         }

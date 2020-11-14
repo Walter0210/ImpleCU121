@@ -25,6 +25,16 @@ namespace CU121.FabricacionPura
             this.producto = producto;
         }
 
+        //Constructor de Cartas
+        public EstructuraCarta(DateTime fechaCreacion, DateTime fechaFinVigencia, DateTime fechaInicioVigencia, string nombre, string responsableCreacion)
+        {
+            this.fechaCreacion = fechaCreacion;
+            this.fechaFinVigencia = fechaFinVigencia;
+            this.fechaInicioVigencia = fechaInicioVigencia;
+            this.nombre = nombre;
+            this.responsableCreacion = responsableCreacion;
+        }
+
         public EstructuraCarta(List<IEstructuraCarta> componentes, string nombre)
         {
             this.componentes = componentes;
@@ -133,16 +143,6 @@ namespace CU121.FabricacionPura
         public double getPrecio()
         {
             return this.producto.getPrecio();
-        }
-
-        public int CompareTo(EstructuraCarta obj)
-        {
-            return string.Compare(nombre, obj.nombre);
-        }
-
-        public int CompareTo(object obj)
-        {
-            throw new NotImplementedException();
         }
     }
 }
