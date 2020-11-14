@@ -1,4 +1,5 @@
 ﻿using CU121.Dominio;
+using CU121.Interfaz;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,66 +30,85 @@ namespace CU121.FabricacionPura
             }
         }
 
-        public List<IEstructuraCarta> buscarCategorias()
+        public List<EstructuraCarta> buscarCategorias()
         {
-            List<IEstructuraCarta> categoriasCarta = new List<IEstructuraCarta>();
+            List<EstructuraCarta> categoriasCarta = new List<EstructuraCarta>();
             foreach (EstructuraCarta carta in cartasVigentes)
             {
                 List<IEstructuraCarta> cates = carta.obtenerHijo();
                 foreach (EstructuraCarta categoria in cates)
                 {
-                    categoriasCarta.Add(categoria);
+                    if (!categoriasCarta.Contains(categoria))
+                    {
+                        categoriasCarta.Add(categoria);
+                    }
+                    
                 }
             }
             return categoriasCarta; 
         }
 
-        public List<IEstructuraCarta> buscarSubCategorias(BindingList<IEstructuraCarta> categoriasSeleccionadas)
+        public List<EstructuraCarta> buscarSubCategorias(BindingList<IEstructuraCarta> categoriasSeleccionadas)
         {
             this.categoriasSeleccionadas = categoriasSeleccionadas;
-            List<IEstructuraCarta> subCategoriasCarta = new List<IEstructuraCarta>();
+            List<EstructuraCarta> subCategoriasCarta = new List<EstructuraCarta>();
+
             foreach (EstructuraCarta categoria in categoriasSeleccionadas)
             {
                 List<IEstructuraCarta> subCates = categoria.obtenerHijo();
-                
                 foreach (EstructuraCarta subcategoria in subCates)
                 {
-                    subCategoriasCarta.Add(categoria);
+                    subCategoriasCarta.Add(subcategoria);
                 }
             }
             return subCategoriasCarta;
         }
 
-        public List<IEstructuraCarta> buscarProductos(BindingList<IEstructuraCarta> subCateSeleccionadas)
+        public List<EstructuraCarta> buscarProductosCarta(BindingList<IEstructuraCarta> subCateSeleccionadas)
         {
             this.subCategoriasSeleccionadas = subCateSeleccionadas;
-            List<IEstructuraCarta> productosDeCarta = new List<IEstructuraCarta>();
+            List<EstructuraCarta> productosDeCarta = new List<EstructuraCarta>();
 
-            foreach (EstructuraCarta subCat in subCateSeleccionadas)
+            foreach (EstructuraCarta subCatego in subCateSeleccionadas)
             {
-                List<IEstructuraCarta> prodCarta = subCat.obtenerHijo();
-                foreach (EstructuraCarta prod in prodCarta)
+                List<IEstructuraCarta> prodCarta = subCatego.obtenerHijo();
+
+                foreach (EstructuraCarta porductoDeCarta in prodCarta)
                 {
-                    productosDeCarta.Add(prod);
+                    productosDeCarta.Add(porductoDeCarta);
                 }
             }
-            this.productosDeCartaSeleccionados = productosDeCarta;
             return productosDeCarta;
         }
 
         public void buscarPedidosCumplenFiltros(DateTime inicio, DateTime fin, List<Pedido> todosPedidos, List<IEstructuraCarta> prodCartaSeleccionados)
         {
+            tablaReporte = new DataTable();
+            DataColumn column;
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Producto";
+            tablaReporte.Columns.Add(column);
+
+            // Create second column.
+            column = new DataColumn();
+            column.DataType = Type.GetType("System.Int32");
+            column.ColumnName = "Cantidad";
+            tablaReporte.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = Type.GetType("System.Double");
+            column.ColumnName = "TotalxCantidad";
+            tablaReporte.Columns.Add(column);
+
             foreach (Pedido pedido in todosPedidos)
             {
                 if (pedido.esValido(inicio, fin))
                 {
-                    tablaReporte = pedido.buscarProdSubCatSeleccionados(prodCartaSeleccionados);
+                    pedido.buscarProdSubCatSeleccionados(prodCartaSeleccionados, tablaReporte);
                 }
             }
         }
-
-
-
-
     }
 }

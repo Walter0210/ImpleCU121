@@ -52,41 +52,47 @@ namespace CU121.Interfaz
             todasCartas = new List<EstructuraCarta>();
 
 
+            //Productos
 
+            Producto producto1 = new Producto(Convert.ToDateTime("10/11/2020"), 2, "Costeleta", 300.50f);
+            Producto producto2 = new Producto(Convert.ToDateTime("10/11/2020"), 2, "Bife", 5300.50f);
+            Producto producto3 = new Producto(Convert.ToDateTime("10/11/2020"), 3, "Salmon", 4300.50f);
+            Producto producto4 = new Producto(Convert.ToDateTime("10/11/2020"), 4, "Pollo asado", 3300.50f);
+            Producto producto5 = new Producto(Convert.ToDateTime("10/11/2020"), 5, "Espageti", 2300.50f);
+            Producto producto6 = new Producto(Convert.ToDateTime("10/11/2020"), 6, "Tallarines", 1300.50f);
 
             //Subconjuntos de productos
+            EstructuraCarta productodeCarta1 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Costeleta", producto1);
+            EstructuraCarta productodeCarta2 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Bife", producto2);
+            EstructuraCarta productodeCarta3 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Salmon", producto3);
+            EstructuraCarta productodeCarta4 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Pollo asado", producto4);
+            EstructuraCarta productodeCarta5 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Espageti", producto5);
+            EstructuraCarta productodeCarta6 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Tallarines", producto6);
+            EstructuraCarta productodeCarta7 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Ñoquis", null);
+            EstructuraCarta productodeCarta8 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Moñitos", null);
+            EstructuraCarta productodeCarta9 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Ravioles", null);
+            EstructuraCarta productodeCarta10 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Canelones", null);
+            EstructuraCarta productodeCarta11 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Agua", null);
+            EstructuraCarta productodeCarta12 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Gaseosa 500ml", null);
+            EstructuraCarta productodeCarta13 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Vino", null);
+            EstructuraCarta productodeCarta14 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Cerveza", null);
+            EstructuraCarta productodeCarta15 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Tiramisu", null);
+            EstructuraCarta productodeCarta16 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Chocotorta", null);
+            EstructuraCarta productodeCarta17 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Escoses", null);
+            EstructuraCarta productodeCarta18 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Americano", null);
+            EstructuraCarta productodeCarta19 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Milanesa con ensalada", null);
+            EstructuraCarta productodeCarta20 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Bife Pollo con pure", null);
+            EstructuraCarta productodeCarta21 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Hamburguesas de garvenzos con pure", null);
+            EstructuraCarta productodeCarta22 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Ensalada gohun", null);
+            EstructuraCarta productodeCarta23 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Hamburgesa", null);
+            EstructuraCarta productodeCarta24 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Pizza", null);
 
-
-            EstructuraCarta producto1 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Costeleta", null);
-            EstructuraCarta producto2 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Bife", null);
-            EstructuraCarta producto3 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Salmon", null);
-            EstructuraCarta producto4 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Pollo asado", null);
-            EstructuraCarta producto5 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Espageti", null);
-            EstructuraCarta producto6 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Tallarines", null);
-            EstructuraCarta producto7 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Ñoquis", null);
-            EstructuraCarta producto8 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Moñitos", null);
-            EstructuraCarta producto9 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Ravioles", null);
-            EstructuraCarta producto10 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Canelones", null);
-            EstructuraCarta producto11 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Agua", null);
-            EstructuraCarta producto12 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Gaseosa 500ml", null);
-            EstructuraCarta producto13 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Vino", null);
-            EstructuraCarta producto14 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Cerveza", null);
-            EstructuraCarta producto15 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Tiramisu", null);
-            EstructuraCarta producto16 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Chocotorta", null);
-            EstructuraCarta producto17 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Escoses", null);
-            EstructuraCarta producto18 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Americano", null);
-            EstructuraCarta producto19 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Milanesa con ensalada", null);
-            EstructuraCarta producto20 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Bife Pollo con pure", null);
-            EstructuraCarta producto21 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Hamburguesas de garvenzos con pure", null);
-            EstructuraCarta producto22 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Ensalada gohun", null);
-            EstructuraCarta producto23 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Hamburgesa", null);
-            EstructuraCarta producto24 = new EstructuraCarta(true, Convert.ToDateTime("10/11/2020"), "Pizza", null);
-
-            DetallePedido detallePedido1 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, producto1);
-            DetallePedido detallePedido2 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, producto2);
-            DetallePedido detallePedido3 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, producto3);
-            DetallePedido detallePedido4 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, producto4);
-            DetallePedido detallePedido5 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, producto5);
+            DetallePedido detallePedido1 = new DetallePedido(2, Convert.ToDateTime("10/11/2020"), 53, productodeCarta1);
+            DetallePedido detallePedido2 = new DetallePedido(1, Convert.ToDateTime("10/11/2020"), 50, productodeCarta2);
+            DetallePedido detallePedido3 = new DetallePedido(4, Convert.ToDateTime("10/11/2020"), 50, productodeCarta3);
+            DetallePedido detallePedido4 = new DetallePedido(2, Convert.ToDateTime("10/11/2020"), 50, productodeCarta4);
+            DetallePedido detallePedido5 = new DetallePedido(5, Convert.ToDateTime("10/11/2020"), 50, productodeCarta5);
+            DetallePedido detallePedido6 = new DetallePedido(5, Convert.ToDateTime("10/11/2020"), 50, productodeCarta6);
 
             Pedido pedido = new Pedido(1, Convert.ToDateTime("10/11/2020"), 1, detallePedido1);
             Pedido pedido2 = new Pedido(2, Convert.ToDateTime("10/11/2020"), 1, detallePedido2);
@@ -120,18 +126,18 @@ namespace CU121.Interfaz
             List<IEstructuraCarta> pm2 = new List<IEstructuraCarta>();
             List<IEstructuraCarta> pm3 = new List<IEstructuraCarta>();
 
-            pc1.Add(producto1); pc1.Add(producto2);
-            pc2.Add(producto3); pc2.Add(producto4);
-            pp1.Add(producto5); pp1.Add(producto6);
-            pp2.Add(producto7); pp2.Add(producto8);
-            pp3.Add(producto9); pp3.Add(producto10);
-            pb1.Add(producto11); pc1.Add(producto12);
-            pb2.Add(producto13); pc1.Add(producto14);
-            ppo1.Add(producto15); pc1.Add(producto16);
-            ppo2.Add(producto17); pc1.Add(producto18);
-            pm1.Add(producto19); pc1.Add(producto20);
-            pm2.Add(producto21); pc1.Add(producto22);
-            pm3.Add(producto23); pm3.Add(producto24);
+            pc1.Add(productodeCarta1);     pc1.Add(productodeCarta2);
+            pc2.Add(productodeCarta3);     pc2.Add(productodeCarta4);
+            pp1.Add(productodeCarta5);     pp1.Add(productodeCarta6);
+            pp2.Add(productodeCarta7);     pp2.Add(productodeCarta8);
+            pp3.Add(productodeCarta9);     pp3.Add(productodeCarta10);
+            pb1.Add(productodeCarta11);    pc1.Add(productodeCarta12);
+            pb2.Add(productodeCarta13);    pc1.Add(productodeCarta14);
+            ppo1.Add(productodeCarta15);   pc1.Add(productodeCarta16);
+            ppo2.Add(productodeCarta17);   pc1.Add(productodeCarta18);
+            pm1.Add(productodeCarta19);    pc1.Add(productodeCarta20);
+            pm2.Add(productodeCarta21);    pc1.Add(productodeCarta22);
+            pm3.Add(productodeCarta23);    pm3.Add(productodeCarta24);
 
             //Subcategorias
             EstructuraCarta subcategoriaCarnes1 = new EstructuraCarta(pc1, "Rojas");
@@ -212,7 +218,7 @@ namespace CU121.Interfaz
                 subCatSelec.Add(subCategoriaSel);
             }
 
-            dgvProductos.DataSource = gestor.buscarProductos(subCatSelec);
+            dgvProductos.DataSource = gestor.buscarProductosCarta(subCatSelec);
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
@@ -224,7 +230,6 @@ namespace CU121.Interfaz
                 FormaVisualizacion fomvis = new FormaVisualizacion();
                 fomvis.Show();
 
-
                 List<IEstructuraCarta> prdCartaSeleccionados = new List<IEstructuraCarta>();
                 foreach (DataGridViewRow row in this.dgvProductos.SelectedRows)
                 {
@@ -233,6 +238,7 @@ namespace CU121.Interfaz
                 }
                 
                 gestor.buscarPedidosCumplenFiltros(fechaInicio, fechaFin, todosPedidos, prdCartaSeleccionados);
+
             }
         }
     }

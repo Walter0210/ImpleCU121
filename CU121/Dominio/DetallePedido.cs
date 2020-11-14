@@ -28,7 +28,6 @@ namespace CU121.Dominio
 
         public int getCantidad() {
             return this.cantidad;
-        
         }
 
         public bool contieneProdCarta(List<IEstructuraCarta> prodDeCarta)
@@ -39,6 +38,11 @@ namespace CU121.Dominio
         public string obtenerProducto()
         {
             return this.productoDeCarta.getNombreProducto();
+        }
+
+        internal double totalProducto()
+        {
+            return this.cantidad * this.productoDeCarta.getPrecio();
         }
     }
 }

@@ -53,39 +53,24 @@ namespace CU121.Dominio
             return (fechaHoraPedido <= fin);
         }
 
-        public DataTable buscarProdSubCatSeleccionados(List<IEstructuraCarta> prodDeCarta)
+        public void buscarProdSubCatSeleccionados(List<IEstructuraCarta> prodDeCarta, DataTable tablaReporte)
         {
-            // Create new DataTable and DataSource objects.
-            DataTable table = new DataTable();
-
-            // Declare DataColumn and DataRow variables.
-            DataColumn column;
             DataRow row;
             List<string> productos = new List<string>();
-
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Producto";
-            table.Columns.Add(column);
-
-            // Create second column.
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.Int32");
-            column.ColumnName = "Cantidad";
-            table.Columns.Add(column);
 
             foreach (EstructuraCarta productoDeCarta in prodDeCarta)
             {
                 if (this.detalle.contieneProdCarta(prodDeCarta))
                 {
-                    productos.Add(this.detalle.obtenerProducto());
-                    row = table.NewRow();
+                    //productos.Add(this.detalle.obtenerProducto());
+                    row = tablaReporte.NewRow();
                     row["Producto"] = this.detalle.obtenerProducto();
                     row["Cantidad"] = this.detalle.getCantidad();
-                    table.Rows.Add(row);
+                    row["TotalxCantidad"] = this.detalle.totalProducto();
+                    tablaReporte.Rows.Add(row);
                 }
             }
-            return table;
+            //return row;
         }
     }
 }

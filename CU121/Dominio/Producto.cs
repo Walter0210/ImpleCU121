@@ -8,7 +8,7 @@ namespace CU121.Dominio
         private DateTime fechaCreacion;
         private int foto;
         private string nombre;
-        private float precio;
+        private double precio;
 
         public Producto()
         {
@@ -37,7 +37,7 @@ namespace CU121.Dominio
             get => nombre;
             set => nombre = value;
         }
-        public float precioProducto
+        public double precioProducto
         {
             get => precio;
             set => precio = value;
@@ -66,6 +66,11 @@ namespace CU121.Dominio
         public List<IEstructuraCarta> obtenerHijo()
         {
             throw new NotImplementedException();
+        }
+
+        internal double getPrecio()
+        {
+            return this.precio;
         }
     }
 }

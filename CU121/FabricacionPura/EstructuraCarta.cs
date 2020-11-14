@@ -129,5 +129,10 @@ namespace CU121.FabricacionPura
         {
             return this.componentes;
         }
+
+        public double getPrecio()
+        {
+            return this.producto.getPrecio();
+        }
     }
 }
